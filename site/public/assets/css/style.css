@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+
+}
+
+:root {
+    --background: #f9f9f9;
+    --color_segundaria_texto: #220c0c;
+    --color_border: #360000;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--background);
+    border-bottom: 2px solid var(--color_border);
+    height: 50px;
+
+}
+
+.menu ul li {
+    float: left;
+    position: relative;
+    padding: 1%;
+}
+
+.menu ul li a {
+    font-size: 18px;
+    display: block;
+    transition: 0.6s;
+    color: var(--color_segundaria_texto);
+}
+
+.menu ul li a:hover {
+    font-size: 19px;
+    transition: 0.6s;
+
+}
+
+.menu ul li ul {
+    display: none;
+    position: absolute;
+
+}
+
+.menu ul li ul li {
+    padding: 4%;
+    width: 255px;
+    background-color: var(--background);
+
+}
+
+.menu ul li:hover ul {
+    display: block;
+}
+
+.primeiraParte {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+
+.bannerTelaInicial {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.primeiraParte .bannerTelaInicial img {
+    border-radius: 100px 220px;
+border: 2px solid var(--color_border);
+    width: 100%;
+    transition: 0.6s;
+
+}
+
+
+
+.bannerTelaInicial h1 {
+    position: absolute;
+    top: 180px;
+    text-align: center;
+    font-size: 80px;
+    color: rgb(243, 238, 238);
+    text-shadow: 15px 15px 15px black;
+    display: none;
+
+    animation-name: banner;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    transition: 0.6s;
+}
+
+@keyframes banner {
+    0% {
+
+        top: 160px;
+    }
+
+    25% {
+        top: 220px;
+    }
+
+    50% {
+        top: 170px;
+    }
+
+    75% {
+        top: 220px;
+    }
+
+    100% {
+        top: 160px;
+    }
+}
+
+.primeiraParte .bannerTelaInicial:hover h1 {
+    display: block;
+    transition: 0.6s;
+}
+
+.primeiraParte .bannerTelaInicial:hover img {
+    filter: blur(2px);
+    transition: 0.6s;
+}
+
+.primeiraParte .bannerTelaInicial {
+    width: 50%;
+}
+
+.primeiraParte .texto_Banner_Tela_Inicial {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    padding: 10px;
+}
+
+.texto_Banner_Tela_Inicial h1 {
+    font-size: 80px;
+    padding-bottom: 50px;
+    color: var(--color_segundaria_texto);
+
+}
+
+
+.caixasEspacoTotal {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2%;
+    /* background: red; */
+}
+
+.caixaEspaco1 {
+    border-radius: 10px;
+    width: 20%;
+    height: 3px;
+    background: var(--color_border);
+}
+
+.caixaEspaco2 {
+    border-radius: 10px;
+    width: 45%;
+    height: 7px;
+    background: var(--color_border);
+}
+

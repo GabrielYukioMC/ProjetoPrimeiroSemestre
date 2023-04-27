@@ -30,5 +30,5 @@ app.listen(PORTA, function () {
     \t\tSe "desenvolvimento", você está se conectando ao banco LOCAL (MySQL Workbench). \n
     \t\tSe "producao", você está se conectando ao banco REMOTO (SQL Server em nuvem Azure) \n
     \t\t\t\tPara alterar o ambiente, comente ou descomente as linhas 1 ou 2 no arquivo 'app.js'\n
-    http://localhost:${PORTA} entra ai.`);
+    \t\t\t\t\t\http://localhost:${PORTA} entra ai.`);
 });
