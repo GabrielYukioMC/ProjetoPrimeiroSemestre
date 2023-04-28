@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/menu.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="./assets/css/Sagas.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- ^------------- Menu ---------------^ -->
+  <header class="menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="PrincipalSagas.html">Sagas</a></li>
+      <li><a href="PrincipalPersonagens.html">Personagens</a></li>
+
+      <li><a href="SobreProjeto.html">Sobre o projeto</a></li>
+      <li><a href="login.html"><i class="fa-solid fa-user"></i></a></li>
+    </ul>
+  </header>
+
+  <!-- ^------------- Menu ---------------^ -->
+
+
+  <div id="sessoesSagas"></div>
+</body>
+
+</html>
+
+<script>
+
+  var texto1 = `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi minima animi repellendus quos vel perspiciatis sed, odit hic quas doloribus vitae sapiente, tempore ad ducimus. Fuga cum provident facere harum. Lorem ipsum  dolor sit amet, consectetur adipisicing elit. Nisi ipsam hic adipisci deserunt nam ex reiciendis. Dolorem omnis hic aliquid beatae perspiciatis, consequuntur ipsam rerum nam ad qui saepe accusantium.`
+
+
+
+  var saga = [
+
+   saga1={
+      class: " EastBlue",
+      img: "East_Blue_Saga.webp",
+      nome: "East Blue",
+      texto: texto1
+    },
+    saga2={
+      class: " Alabasta",
+      img: "East_Blue_Saga.webp",
+      nome: "Alabasta",
+      texto: texto1
+    },
+    saga3={
+      class: " Skypiea",
+      img: "East_Blue_Saga.webp",
+      nome: "Skypiea",
+      texto: texto1
+    },
+    saga4={
+      class: " Water7",
+      img: "East_Blue_Saga.webp",
+      nome: "Water 7",
+      texto: texto1
+    },
+    saga5={
+      class: " ThrillerBark",
+      img: "East_Blue_Saga.webp",
+      nome: "Thriller Bark",
+      texto: texto1
+    }, saga6={
+      class: " Marineford",
+      img: "East_Blue_Saga.webp",
+      nome: "Marineford",
+      texto: texto1
+    }, saga7={
+      class: " HomensPeixe",
+      img: "East_Blue_Saga.webp",
+      nome: "Ilha dos Homens Peixes",
+      texto: texto1
+    }, saga8={
+      class: " AliancaPirata",
+      img: "East_Blue_Saga.webp",
+      nome: "Aliança Pirata",
+      texto: texto1
+    }, saga9={
+      class: " Yonkou",
+      img: "East_Blue_Saga.webp",
+      nome: "Yonkou",
+      texto: texto1
+    }
+  ]
+  
+
+  for (let cont = 0; cont < 10; cont++) {
+
+
+
+    sessoesSagas.innerHTML += `
+  <section class="sessoes ${saga[cont].class}">
+    <div class="caixaSaga">
+ 
+      <div class="imagemConteudo"> <img src="assets/img/${saga[cont].img}" alt=""></div>
+     
+       <div class="textoConteudo">
+
+        <h1>${saga[cont].nome}</h1>
+         <p>${saga[cont].texto}</p>
+         <a href="#">Ver Mais...</a>
+     
+       </div>
+       
+     </div>
+         
+  </section>
+  
+  `;
+  }
+
+
+</script>
