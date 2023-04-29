@@ -19,7 +19,7 @@
     justify-content: space-around;
     align-items: center;
     background-color: var(--background_menu);
-    border-bottom: 2px solid var(--color_border_menu);
+    border-bottom: 3px solid var(--color_border_menu);
     height: 50px;
 
 }
