@@ -123,7 +123,7 @@ for (var cont = 0; cont < saga.length; cont++) {
   <section class="sessoes ${saga[cont].class}">
     <div class="caixaSaga">
  
-      <div class="imagemConteudo"> <img src="assets/img/${saga[cont].img}" alt=""></div>
+      <div class="imagemConteudo"> <img src="assets/img/sagas/${saga[cont].img}" alt=""></div>
      
        <div class="textoConteudo">
 

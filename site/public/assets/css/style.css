@@ -1,27 +1,44 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: monospace;
+
+    /* ?fonte? */
+    font-family: 'Times New Roman', Times, serif;
+    /* font-family: monospace; */
+    /* ?fonte? */
+
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
 
 }
 
-
-:root {
-    --background: #f9f9f9;
-    --color_segundaria_texto: #220c0c;
-    --color_border: #360000;
+html {
+    scroll-behavior: smooth;
 }
 
+
+:root {
+
+    --color_border: #360000;
+
+
+    /* --corPrimaria: #343434;
+    --corSegundaria: #e8e5e5; */
+
+    --corPrimaria: #161045;
+    --corSegundaria: #6954f4;
+    --corterciaria: #2211a0;
+
+
+    --corClara: #fff;
+
+
+}
 
 .primeiraParte {
     display: flex;
     justify-content: center;
-    background-color: #bbffff;
-    background-image: linear-gradient(195deg,
-            #bbffff 0%, #66c7c7 74%);
 }
 
 
@@ -32,14 +49,13 @@
     cursor: pointer;
     height: 55%;
     border-radius: 100px 220px;
-    /* background-color: #220c0c; */
 }
 
 
 .primeiraParte .bannerTelaInicial img {
     border: 2px solid var(--color_border);
     border-radius: 100px 220px;
-
+    filter: opacity(0.9);
     width: 100%;
     transition: 0.6s;
 
@@ -53,7 +69,7 @@
     font-family: cursive;
     text-align: center;
     font-size: 80px;
-    color: rgb(243, 238, 238);
+    color: var(--corClara);
     text-shadow: 15px 15px 15px black;
     display: none;
     animation-name: banner;
@@ -65,7 +81,7 @@
 @keyframes banner {
     0% {
 
-        top: 160px;
+        top: 150px;
     }
 
     25% {
@@ -73,7 +89,7 @@
     }
 
     50% {
-        top: 170px;
+        top: 130px;
     }
 
     75% {
@@ -91,7 +107,7 @@
 }
 
 .primeiraParte .bannerTelaInicial:hover img {
-    filter: blur(1px);
+    filter: opacity(0.85);
     transition: 0.6s;
 }
 
@@ -105,7 +121,6 @@
     text-align: center;
     flex-direction: column;
     align-items: center;
-    /* background: #000; */
     justify-content: center;
     width: 40%;
     padding: 10px;
@@ -115,7 +130,299 @@
     font-size: 80px;
     padding-bottom: 50px;
     font-family: cursive;
-    color: var(--color_segundaria_texto);
+    color: var(--corPrimaria);
+
 }
 
 
+.texto_Banner_Tela_Inicial p {
+    font-size: 20px;
+
+    color: var(--corPrimaria);
+
+}
+
+.boteos {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+
+.boteos .button {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    text-align: center;
+
+}
+
+.button {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.button:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.button:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    transition: 0.6s;
+    z-index: -1;
+}
+
+.button:hover:before {
+    width: 100%;
+}
+
+
+
+.botaoCadastrar {
+    border: 2px solid #2b2929;
+    background-color: var(--corPrimaria);
+    color: var(--corClara);
+
+}
+
+.botaoCadastrar:before {
+    background-color: var(--corClara);
+}
+
+.botaoCadastrar:hover {
+    color: #000;
+
+}
+
+.botaoConhecer {
+    border: 2px solid #2b2929;
+    background-color: var(--corClara);
+    color: var(--corPrimaria);
+}
+
+.botaoConhecer:before {
+    background-color: var(--corPrimaria);
+}
+
+.botaoConhecer:hover {
+    color: var(--corClara);
+
+}
+
+
+
+.curiosidade {
+    display: flex;
+    align-items: center;
+    height: 150px;
+    justify-content: center;
+}
+
+.caixaCuriosidadeTotal {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    height: 150px;
+    justify-content: space-evenly;
+}
+
+.caixaCuriosidade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--corPrimaria);
+    transition: 0.6s;
+    cursor: default;
+}
+
+.caixaCuriosidade h1 {
+
+    text-align: center;
+    font-size: 50px;
+}
+
+.caixaCuriosidade h3 {
+    font-size: 18px;
+    text-align: center;
+}
+
+.caixaCuriosidadeDiv {
+    width: 2px;
+    height: 20%;
+    background: var(--corPrimaria);
+}
+
+.caixa1:hover h1 {
+    color: #b84c09;
+    transition: 0.6s;
+}
+
+.caixa2:hover h1 {
+    color: #0920b8;
+    transition: 0.6s;
+}
+
+.caixa3:hover h1 {
+    color: #a4b809;
+    transition: 0.6s;
+}
+
+
+.grafico {
+    margin-top: 4%;
+    padding: 1%;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(139deg, var(--corPrimaria) 55%, #d1d1d100 55%);
+
+}
+
+.grafico .grafico_texto {
+    width: 55%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--corClara);
+
+}
+
+.grafico .grafico_texto h1 {
+    font-size: 35px;
+    border-bottom: 2px solid var(--corClara);
+    text-align: center;
+    padding-bottom: 1%;
+    margin-bottom: 12%;
+}
+
+
+.grafico .grafico_texto ul li {
+
+    width: 600px;
+    font-size: 21px;
+    margin-left: 5%;
+    list-style: inside;
+
+}
+
+.grafico .grafico_texto ul li span {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.grafico .caixa_grafico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+}
+
+.conteudo_paginas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    height: 450px;
+}
+
+.conteudo_paginas h2 {
+    text-align: center;
+    padding: 2%;
+    color: var(--corClara);
+    font-size: 40px;
+}
+
+.totalPaginas {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--corPrimaria) 55%, #d1d1d100 55%);
+}
+
+.caixas_pag {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70%;
+}
+
+
+.conteudo_paginas .totalPaginas .caixas_pag a .caixa_pag {
+    display: flex;
+    width: 250px;
+    height: 250px;
+    font-size: 20px;
+    align-items: end;
+    border-radius: 25px;
+    box-shadow: rgb(0, 0, 0) 0px 35px 70px;
+    transition: 0.6s;
+}
+
+.conteudo_paginas .totalPaginas .caixas_pag a .caixa_pag:hover {
+
+
+    width: 240px;
+    height: 240px;
+    box-shadow: rgb(0, 0, 0) 0px 40px 70px;
+    transition: 0.9s;
+}
+
+
+.conteudo_paginas .totalPaginas .caixas_pag a .caixa_pag h1 {
+    text-align: center;
+    width: 100%;
+    color: var(--corPrimaria);
+    /* color: var(--corClara); */
+
+}
+
+.conteudo_paginas .totalPaginas .caixas_pag a .caixa_pag:hover h1{
+    color: var(--corClara);
+}
+
+.autor:hover{
+    background-image: url(../img/luffyPagwebp.webp);
+    background-size: cover;
+    background-position: 100%;
+   
+}
+
+
+.arcos:hover{
+    background-image: url(../img/zoroPag.png);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.personagens:hover{
+    background-image: url(../img/sanjiPag.jpg);
+    background-size: cover;
+    background-position: 40%;
+
+}

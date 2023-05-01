@@ -99,20 +99,20 @@
 /* ^------------------ FINAL CONTEUDO DAS SESSIONS ------------------  ^ */
 
 /* ^------------------  PARTE DAS SAGAS COR/ONDA ------------------  ^ */
-.sessoes {
-    background-color: #d759fd;
-}
-
-.sessoes::before {
-    background: url(../img/wave/wave4.svg);
-}
-
 .sessoes:nth-child(2n) {
-    background-color: #76239c;
+    background-color: #d759fd;
 }
 
 .sessoes:nth-child(2n)::before {
     background: url(../img/wave/wave3.svg);
+}
+
+.sessoes {
+    background-color: #76239c;
+}
+
+.sessoes::before {
+    background: url(../img/wave/wave4.svg);
 }
 
 
@@ -144,3 +144,22 @@
 }
 
 /* ^------------------ FINAL PARTE DAS SAGAS ADD ONDAS ------------------  ^ */
+
+
+
+
+/* .sessoes:nth-child(2n) {
+    background-color: #a09fa0;
+}
+
+.sessoes:nth-child(2n)::before {
+    background: url(../img/wave/wave3.svg);
+}
+
+.sessoes {
+    background-color: #3f3f3f;
+}
+
+.sessoes::before {
+    background: url(../img/wave/wave4.svg);
+} */

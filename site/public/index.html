@@ -20,14 +20,27 @@
   <!-- ^------------- Menu ---------------^ -->
   <header class="menu">
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="PrincipalSagas.html">Sagas</a></li>
-      <li><a href="PrincipalPersonagens.html">Personagens</a></li>
+      <div class="areaLogo">
+        <li><a href="#"><span>D</span>ONE PIECE</a></li>
 
-      <li><a href="SobreProjeto.html">Sobre o projeto</a></li>
-      <li><a href="login.html"><i class="fa-solid fa-user"></i></a></li>
+      </div>
+      <div class="areaServisos">
+        <li><a href="#">Home</a></li>
+        <li class="divisao"><a href=""></a></li>
+
+        <li ><a href="PrincipalSagas.html">Sagas</a></li>
+        <li class="divisao"><a href=""></a></li>
+        <li><a href="PrincipalPersonagens.html">Personagens</a></li>
+
+        <li class="divisao"><a href=""></a></li>
+        <li><a href="SobreProjeto.html">Sobre o projeto</a></li>
+        <li class="divisao"><a href=""></a></li>
+        <li><a href="login.html"><i class="fa-solid fa-user"></i></a></li>
+      </div>
     </ul>
   </header>
+
+
 
   <!-- ^------------- Menu ---------------^ -->
   <section class="sessoes primeiraParte">
@@ -37,12 +50,84 @@
     </div>
     <div class="texto_Banner_Tela_Inicial">
       <h1>ONE PIECE</h1>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos perferendis, harum quibusdam, ut praesentium
-      deserunt impedit iste pariatur ea, unde tempore consequatur expedita! Debitis, iure quas dolorum possimus
-      repellendus fugiat!
+      <p> One Piece é um anime/mangá de aventura e fantasia criado por <a href="#autor">Eiichiro Oda</a>. A história
+        segue Monkey D. Luffy em
+        sua jornada para se tornar o Rei dos Piratas e encontrar o lendário tesouro, "One Piece". Ele recruta uma
+        tripulação e enfrenta inimigos poderosos em um mundo expansivo. One Piece é conhecido por sua narrativa
+        emocionante, personagens memoráveis e é uma das séries de mangá mais populares do mundo.</p>
+      <div class="boteos">
+
+        <a href="#" class="button botaoCadastrar">Cadastre-se</a>
+
+        <a href="#" class="button botaoConhecer">conhecer obra</a>
+
+      </div>
     </div>
   </section>
 
+  <section class="curiosidade">
+
+    <div class="caixaCuriosidadeTotal">
+      <div class="caixaCuriosidade caixa1">
+        <h1>1080 +</h1>
+        <h3>Capitulos de manga</h3>
+      </div>
+      <div class="caixaCuriosidadeDiv"></div>
+      <div class="caixaCuriosidade caixa2">
+        <h1>1060 +</h1>
+        <h3>Episódios de anime</h3>
+      </div>
+      <div class="caixaCuriosidadeDiv"></div>
+      <div class="caixaCuriosidade caixa3">
+        <h1>517M +</h1>
+        <h3> de cópias vendidas no mundo</h3>
+      </div>
+    </div>
+  </section>
+  <!-- ^^ -->
+
+  <section class="grafico">
+    <div class="grafico_texto">
+      <ul>
+        <h1> Preferências de leitura e visualização de One Piece </h1>
+        <li> porcentagem de pessoas que assistem o anime <span>10</span>%</li>
+        <li> porcentagem de pessoas que leem o manga <span>50</span>%</li>
+        <li> porcentagem de pessoas que leem o manga e assistem o anime <span>40</span>%</li>
+      </ul>
+
+    </div>
+    <div class="caixa_grafico">
+      <canvas id="myChart"></canvas>
+    </div>
+  </section>
+
+  <section class="conteudo_paginas">
+  
+    <div class="totalPaginas">
+      <h2>Conteudo das Paginas</h2>
+      <div class="caixas_pag ">
+        <a href="#">
+          <div class="caixa_pag autor">
+            <h1>Autor</h1>
+          </div></a>
+          <a href="PrincipalSagas.html">
+          <div class="caixa_pag arcos">
+            <h1>Arcos</h1>
+          </div></a>
+          <a href="#">
+            <div class="caixa_pag personagens">
+              <h1>Personagens</h1>
+            </div>
+          </a>
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <br><br><br><br><br>
 
 </html>
-<script src="./assets/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="assets/js/script.js"></script>
