@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    /* ?fonte? */
+    font-family: 'Times New Roman', Times, serif;
+    /* ?fonte? */
+
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+:root {
+
+    --color_border: #360000;
+
+    --corPrimaria: #161045;
+    --corSegundaria: #6954f4;
+    --corterciaria: #2211a0;
+
+
+    --corClara: #fff;
+
+}
+
+body {
+    background: var(--corPrimaria);
+    overflow: hidden;
+}
+
+.caixaCadastro {
+    background: var(--corPrimaria);
+    width: 100vw;
+    color: var(--corClara);
+}
+
+
+.caixaTexto {
+    text-transform: uppercase;
+    margin-bottom: 3%;
+}
+
+
+.conteudoTotal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+.formularioCadastro {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 600px;
+    box-shadow: 0 8px 32px 0 rgba(126, 133, 240, 0.526);
+    border-radius: 10px;
+    filter: grayscale(0.3);
+    border: 1px solid rgba(255, 255, 255, 0.301);
+    position: relative;
+    z-index: 0;
+}
+
+
+.formularioCadastro::before {
+    content: "";
+    border-radius: 10px;
+
+
+    background-image: url(../img/loginGM.jpg);
+    background-size: cover;
+    background-position: 60%;
+
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+
+
+.formularioCadastro button {
+
+    width: 200px;
+    height: 50px;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    border-radius: 8px;
+    font-size: 22px;
+    background: var(--corPrimaria);
+    color: var(--corClara);
+    border: 1px solid var(--corClara);
+    cursor: pointer;
+}
+
+.formularioCadastro a {
+    color: var(--corSegundaria);
+    font-size: 18px;
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+
+/* *login* */
+
+.caixaLogin {
+    background: var(--corPrimaria);
+    /* background: #0ebde0; */
+    color: var(--corClara);
+}
+
+
+.caixaTexto {
+    text-transform: uppercase;
+    margin-bottom: 3%;
+}
+
+
+.conteudoTotal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+.formularioLogin {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 600px;
+    box-shadow: 0 8px 32px 0 rgba(126, 133, 240, 0.526);
+    border-radius: 10px;
+    filter: grayscale(0.3);
+    border: 1px solid rgba(255, 255, 255, 0.301);
+    position: relative;
+    z-index: 0;
+}
+
+
+.formularioLogin::before {
+    content: "";
+    border-radius: 10px;
+    background-image: url(../img/cadastro.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.formularioLogin button {
+
+    width: 200px;
+    height: 50px;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    border-radius: 8px;
+    font-size: 22px;
+    background: var(--corPrimaria);
+    color: var(--corClara);
+    border: 1px solid var(--corClara);
+    cursor: pointer;
+}
+
+.formularioLogin a {
+    color: var(--corSegundaria);
+    font-size: 18px;
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+/* & style inputs & */
+.caixaInput {
+    display: flex;
+    width: 52%;
+    flex-direction: column;
+    margin-top: 4%;
+    margin-left: 2%;
+    z-index: 1;
+}
+
+.caixaInput input {
+    border: 0;
+    outline: none;
+    width: 280px;
+    background: none;
+    color: var(--corSegundaria);
+    font-size: 20px;
+    border-bottom: 3px solid var(--corPrimaria);
+}
+
+.caixaInput input[type=text]:focus{
+    background: none;
+}
+
+.caixaInput label {
+    font-size: 22px;
+    padding-bottom: 2%;
+    font-weight: 600;
+
+    color: var(--corPrimaria);
+}
+
+.caixaInput i {
+    color: var(--corterciaria);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.divAlerta {
+    width: 100vw;
+    position: relative;
+
+}
+
+.campoAlert {
+    position: absolute;
+    right: 0%;
+    top: -15px;
+    width: 500px;
+    display: flex;
+    border-radius: 4px 0 0 4px;
+    padding: 1%;
+    font-size: 20px;
+    overflow: hidden;
+    margin-top: 2%;
+    animation: CampoAlert 1s ease forwards;
+}
+
+.camposEmBrancoAlert {
+    background: #faff9e;
+    border-left: 8px solid #b4bd01;
+    color: #b4bd01;
+}
+
+
+.camposSenha {
+    background: #ffbb6d;
+    border-left: 8px solid #bd5f01;
+    color: #bd5f01;
+}
+
+.camposEmail {
+    background: #ffcb9e;
+    border-left: 8px solid #bd7501;
+    color: #bd7501;
+}
+
+.CamposEmProcessoAlert{
+    background: #9ef0ff;
+    border-left: 8px solid #0175bd;
+    color: #0175bd;
+}
+
+
+.TudoCerto {
+    background: #b6ff9e;
+    border-left: 8px solid #04bd01;
+    color: #04bd01;
+}
+
+.CampoTudoErradoAlert{
+    background: #ff9e9e;
+    border-left: 8px solid #bd0101;
+    color: #bd0101;
+}
+
+.none {
+    display: none;
+}
+
+.block {
+    display: flex;
+}
+
+.campoAlert i {
+    padding-right: 2%;
+}
+
+@keyframes CampoAlert {
+    0% {
+        transform: translateX(100%);
+    }
+
+
+    25% {
+
+        transform: translateX(-10%);
+
+    }
+
+    75% {
+
+        transform: translateX(0%);
+
+    }
+
+    100% {
+
+        transform: translateX(-10px);
+
+    }
+
+}

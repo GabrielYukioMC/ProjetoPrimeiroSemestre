@@ -5,27 +5,99 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/cadastro.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Document</title>
 </head>
 
 <body>
+
+    <!-- ^  login  ^ -->
+    <div class="caixaLogin">
+        <div class="conteudoTotal">
+            <div class="caixaTexto">
+                <h1>login</h1>
+            </div>
+            <div class="formularioLogin">
+                <div class="caixaInput">
+                    <label for="login_email_input">E-mail</label>
+                    <input type="text" name="login_email_input" id="login_email_input">
+                </div>
+                <div class="caixaInput">
+                    <label for="login_senha_input">Senha</label>
+                    <div class="caixaSenha">
+                        <input type="password" name="login_senha_input" id="login_senha_input">
+                        <i id="mostrarL" class="fa-solid fa-eye"></i>
+                    </div>
+                </div>
+                <button onclick="entrar()">Entrar</button>
+
+                <a href="cadastro.html">Não possui cadastro?</a>
+            </div>
+            <!-- ^  parte alertas  ^ -->
+            <div id="exibir">
+                <div class="divAlerta ">
+                    <div id="CamposEmBrancoAlert" class=" campoAlert camposEmBrancoAlert none">
+                        <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+                        <p>Campos em branco digite algo para continuar!</p>
+                    </div>
+                    <div id="CamposEmProcessoAlert" class=" campoAlert CamposEmProcessoAlert none">
+                        <i class="fa-regular fa-circle-dashed"></i>
+                        <p>Validando login!</p>
+                    </div>
+
+                    <div id="CampoTudoCertoAlert" class=" campoAlert TudoCerto none">
+                        <i class="fa-sharp fa-solid fa-circle-check"></i>
+                        <p>Login encontrado!</p>
+                    </div>
+                    <div id="CampoTudoErradoAlert" class=" campoAlert CampoTudoErradoAlert none">
+                        <i class="fa-sharp fa-solid fa-circle-check"></i>
+                        <p>Login não encontrado encontrado!</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ^  login  ^ -->
+
+
 </body>
 
 </html>
 
 <script>
+    var CamposEmBrancoAlert = document.getElementById('CamposEmBrancoAlert');
+    var CamposEmProcessoAlert = document.getElementById('CamposEmProcessoAlert');
+    var CampoTudoCertoAlert = document.getElementById('CampoTudoCertoAlert');
+    var CampoTudoErradoAlert = document.getElementById('CampoTudoErradoAlert');
 
 
     function entrar() {
 
 
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
+        var emailVar = login_email_input.value;
+        var senhaVar = login_senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
+
+            CamposEmBrancoAlert.classList.remove('none')
+
+            setTimeout(() => {
+                CamposEmBrancoAlert.classList.add('none')
+            }, "2000")
+
             return false;
         }
+        CamposEmProcessoAlert.classList.remove('none')
+        setTimeout(() => {
+            CamposEmProcessoAlert.classList.add('none')
+        }, "2000")
+
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -53,21 +125,32 @@
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
 
-                    setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
-                    }, 1000); // apenas para exibir o loading
+                    setTimeout(() => {
+
+                        CampoTudoCertoAlert.classList.remove('none')
+                        setTimeout(() => {
+                            CampoTudoCertoAlert.classList.add('none')
+                        }, "2000")
+
+                        setTimeout(function () {
+                            window.location = "/";
+                        }, 2000);
+                    }, "2000")
 
                 });
 
             } else {
+
+                CampoTudoErradoAlert.classList.remove('none')
+                setTimeout(() => {
+                    CampoTudoErradoAlert.classList.add('none')
+                }, "2000")
 
                 console.log("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {
                     console.error(texto);
 
-                    // <!--  !!! posivel retirada !!! -->
-                    finalizarAguardar(texto);
                 });
             }
 
@@ -81,3 +164,4 @@
 
 
 </script>
+<script src="assets/js/login.js"></script>

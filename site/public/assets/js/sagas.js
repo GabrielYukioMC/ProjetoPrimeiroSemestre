@@ -110,7 +110,7 @@ var saga = [
         img: "yonkou.webp",
         nome: "Yonkou",
         texto: textoSaga9,
-        href: "#",
+        href: "index.html",
     }
 ]
 

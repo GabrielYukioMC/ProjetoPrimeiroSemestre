@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    /* ?fonte? */
+    font-family: 'Times New Roman', Times, serif;
+    /* ?fonte? */
+
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+
+}
+
+:root {
+
+    --color_border: #360000;
+
+    --corPrimaria: #161045;
+    --corSegundaria: #6954f4;
+    --corterciaria: #2211a0;
+
+    --corClara: #fff;
+
+
+}
+
+footer {
+    display: flex;
+    background: var(--corPrimaria);
+    height: 200px;
+    justify-content: space-around;
+    color: var(--corClara);
+    font-size: 20px;
+    position: relative;
+}
+
+footer::before {
+    content: "";
+    background: var(--corSegundaria);
+    width: 240px;
+    z-index: 1;
+    left: -40px;
+    top: 0;
+    height: 200px;
+    border-radius: 0% 0% 360px 0%;
+    position: absolute;
+}
+
+
+
+
+footer .parte {
+    z-index: 2;
+    width: 250px;
+}
+
+.informacoes,
+.menu_footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.informacoes li,
+.menu_footer li  {
+    text-transform: uppercase;
+    padding-top: 12px;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu_footer li a{
+    color: var(--corClara);
+
+}
+
+.menu_footer::before{
+   content: "";
+   width: 3px;
+   height: 50%;
+   background: var(--corClara);
+   z-index: -1;
+   left: 35%;
+   position: absolute;
+}
+
+.menu_footer::after{
+    content: "";
+    width: 3px;
+    height: 50%;
+    background: var(--corClara);
+    z-index: -1;
+    right:  35%;
+    position: absolute;
+ }
+
+.redes {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  
+}
+
+.redes a i {
+    color: var(--corClara);
+    font-size: 45px;
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+.redes a i:hover {
+    font-size: 50px;
+    transition: 0.6s;
+}
+
+.github:hover {
+    color: rgb(184, 3, 154);
+}
+
+.facebook:hover {
+    color: rgb(46, 90, 250);
+}
+
+.instagram:hover {
+    color: rgb(250, 233, 46);
+}

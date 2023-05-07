@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/cadastro.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <title>Document</title>
 
@@ -13,6 +19,64 @@
 
 <body>
 
+    <div class="caixaCadastro">
+        <div class="conteudoTotal">
+            <div class="caixaTexto">
+                <h1>Cadastre-se</h1>
+            </div>
+            <div class="formularioCadastro">
+                <div class="caixaInput">
+                    <label for="nome_input">Nome</label>
+                    <input type="text" name="nome_input" id="nome_input">
+                </div>
+                <div class="caixaInput">
+                    <label for="email_input">E-mail</label>
+                    <input type="text" name="email_input" id="email_input">
+                </div>
+                <div class="caixaInput">
+                    <label for="senha_input">Senha</label>
+                    <div class="caixaSenha">
+                        <input type="password" name="senha_input" id="senha_input">
+                        <i id="mostrar" class="fa-solid fa-eye"></i>
+                    </div>
+                </div>
+                <div class="caixaInput">
+                    <label for="ConfSenha_input">Confirmação de senha</label>
+                    <div class="caixaSenha">
+                        <input type="password" name="ConfSenha_input" id="ConfSenha_input">
+                        <i id="mostarConf" class="fa-solid fa-eye"></i>
+                    </div>
+                </div>
+
+
+                <button onclick="cadastrar()">Cadastrar</button>
+
+                <a href="login.html"> Já possui cadastro?</a>
+            </div>
+            <!-- ^  parte alertas  ^ -->
+            <div id="exibir">
+                <div class="divAlerta ">
+                    <div id="CamposEmBrancoAlert" class=" campoAlert camposEmBrancoAlert none">
+                        <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+                        <p>Campos em branco digite algo para continuar!</p>
+                    </div>
+                    <div id="CampoEmailAlert" class=" campoAlert camposEmail none">
+                        <i class="fa-sharp fa-solid fa-circle-xmark"></i>
+                        <p>Campo E-mail invalido! </p>
+                    </div>
+                    <div id="CampoSenhaAlert" class=" campoAlert camposSenha none">
+                        <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+                        <p>Senhas não compativeis!</p>
+                    </div>
+                    <div id="CampoTudoCertoAlert" class=" campoAlert TudoCerto none">
+                        <i class="fa-sharp fa-solid fa-circle-check"></i>
+                        <p>Parabens você foi cadastrado!</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 
 </body>
@@ -20,6 +84,12 @@
 </html>
 
 <script>
+
+    var CamposEmBrancoAlert = document.getElementById('CamposEmBrancoAlert');
+    var CampoSenhaAlert = document.getElementById('CampoSenhaAlert');
+    var CampoTudoCertoAlert = document.getElementById('CampoTudoCertoAlert');
+    var CampoEmailAlert = document.getElementById('CampoEmailAlert');
+
     function cadastrar() {
 
 
@@ -28,12 +98,44 @@
         var nomeVar = nome_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
-        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var confirmacaoSenhaVar = ConfSenha_input.value;
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            // exibir uma caixa de texto sobre o erro
+
+            CamposEmBrancoAlert.classList.remove('none')
+
+            setTimeout(() => {
+                CamposEmBrancoAlert.classList.add('none')
+            }, "2000")
+
+            return false;
+        } else if (emailVar.indexOf("@") < 0) {
+
+            // alert campo E-mail invalido
+            CampoEmailAlert.classList.remove('none')
+            setTimeout(() => {
+                CampoEmailAlert.classList.add('none')
+            }, "2000")
+           
+            return false;
+
+        } else if (senhaVar != confirmacaoSenhaVar) {
 
 
+            // campo senha invalido
+            CampoSenhaAlert.classList.remove('none')
+            setTimeout(() => {
+                CampoSenhaAlert.classList.add('none')
+            }, "2000")
+            return false;
         }
+
+        // alert deu tudo certo
+        CampoTudoCertoAlert.classList.remove('none')
+        setTimeout(() => {
+            CampoTudoCertoAlert.classList.add('none')
+        }, "2000")
 
 
         // Enviando o valor da nova input
@@ -55,8 +157,6 @@
 
             if (resposta.ok) {
 
-
-
                 setTimeout(() => {
                     window.location = "login.html";
                 }, "2000")
@@ -73,3 +173,4 @@
     }
 
 </script>
+<script src="assets/js/cadastro.js"></script>

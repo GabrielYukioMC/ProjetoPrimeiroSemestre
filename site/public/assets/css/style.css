@@ -4,7 +4,6 @@
 
     /* ?fonte? */
     font-family: 'Times New Roman', Times, serif;
-    /* font-family: monospace; */
     /* ?fonte? */
 
     text-decoration: none;
@@ -23,8 +22,6 @@ html {
     --color_border: #360000;
 
 
-    /* --corPrimaria: #343434;
-    --corSegundaria: #e8e5e5; */
 
     --corPrimaria: #161045;
     --corSegundaria: #6954f4;
@@ -47,7 +44,7 @@ html {
     margin: 2%;
     position: relative;
     cursor: pointer;
-    height: 55%;
+    height: 550px;
     border-radius: 100px 220px;
 }
 
@@ -56,7 +53,8 @@ html {
     border: 2px solid var(--color_border);
     border-radius: 100px 220px;
     filter: opacity(0.9);
-    width: 100%;
+    width: 730px;
+    height: 550px;
     transition: 0.6s;
 
 }
@@ -277,7 +275,7 @@ html {
 
 .caixa1:hover h1 {
     color: #b84c09;
-    transition: 0.6s;
+    transition: 0.6s; 
 }
 
 .caixa2:hover h1 {
@@ -347,7 +345,7 @@ html {
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-    height: 450px;
+    height: 450px; 
 }
 
 .conteudo_paginas h2 {
@@ -381,8 +379,17 @@ html {
     align-items: end;
     border-radius: 25px;
     box-shadow: rgb(0, 0, 0) 0px 35px 70px;
+
     transition: 0.6s;
 }
+
+.autor,
+.arcos,
+.personagens {
+    background: linear-gradient(180deg, var(--corPrimaria) 50%, #d1d1d100 50%);
+    transition: 0.6s;
+}
+
 
 .conteudo_paginas .totalPaginas .caixas_pag a .caixa_pag:hover {
 
@@ -390,7 +397,7 @@ html {
     width: 240px;
     height: 240px;
     box-shadow: rgb(0, 0, 0) 0px 40px 70px;
-    transition: 0.9s;
+    transition: 1s;
 }
 
 
@@ -398,29 +405,29 @@ html {
     text-align: center;
     width: 100%;
     color: var(--corPrimaria);
-    /* color: var(--corClara); */
 
 }
 
-.conteudo_paginas .totalPaginas .caixas_pag a .caixa_pag:hover h1{
+.conteudo_paginas .totalPaginas .caixas_pag a .caixa_pag:hover h1 {
     color: var(--corClara);
 }
 
-.autor:hover{
+
+.personagens:hover {
     background-image: url(../img/luffyPagwebp.webp);
     background-size: cover;
     background-position: 100%;
-   
+
 }
 
 
-.arcos:hover{
+.arcos:hover {
     background-image: url(../img/zoroPag.png);
     background-size: cover;
     background-position: 50%;
 }
 
-.personagens:hover{
+.autor:hover {
     background-image: url(../img/sanjiPag.jpg);
     background-size: cover;
     background-position: 40%;

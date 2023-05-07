@@ -20,7 +20,7 @@ var sqlServerConfig = {
 // CONEXÃO DO MYSQL WORKBENCH (LOCAL)
 var mySqlConfig = {
     host: "localhost",
-    database: "protifolio",
+    database: "projeto",
     user: "root",
     password: "12345", // senha fake pra enviar pro github (~_~)
 };
