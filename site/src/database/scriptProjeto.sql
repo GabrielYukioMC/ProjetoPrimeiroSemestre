@@ -37,6 +37,7 @@ create table usuario (
     email varchar(45),
     senha varchar(45),
     cargo varchar (45),
+    meioVisualizacao varchar(45),
     dtcadastro datetime default current_timestamp,
     corPag varchar(45),
     fkPersonagemF int,

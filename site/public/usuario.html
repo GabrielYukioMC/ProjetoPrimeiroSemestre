@@ -1,17 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="./assets/css/menu.css">
+    <link rel="stylesheet" href="./assets/css/usuario.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
+
 <body>
-    olá <span id="nome"></span>
+    <!-- ^------------- Menu ---------------^ -->
+    <header class="menu">
+        <ul>
+            <div class="areaLogo">
+                <li><a href="index.html"><span>D</span>ONE PIECE</a></li>
+            </div>
+            <div class="areaServisos">
+                <li><a href="index.html">Home</a></li>
+                <li class="divisao"><a href=""></a></li>
+
+                <li><a href="PrincipalSagas.html">Sagas</a></li>
+                <li class="divisao"><a href=""></a></li>
+                <li><a href="PrincipalPersonagens.html">Personagens</a></li>
+
+                <li class="divisao"><a href=""></a></li>
+                <li><a href="SobreProjeto.html">Sobre o projeto</a></li>
+                <li class="divisao"><a href=""></a></li>
+                <li><a href="SobreProjeto.html">Teorias</a></li>
+                <li class="divisao"><a href=""></a></li>
+                <li><a><i class="fa-solid fa-gear"></i></a></li>
+            </div>
+        </ul>
+    </header>
+
+    <!-- ^------------- Menu ---------------^ -->
+
+<!-- *ajustar a cor de acordo com o tipo de cor de pagina* -->
+
+    <div class="caixaTotalUsuario padraoTotal">
+        <section class="lateral pradaoLateral">
+            <div class="caixaFotoUsuario padraoLateralFoto">
+                <span id="FotoSpan"></span>
+            </div>
+            <div class="caixaDadosUsuario">
+
+                <p>Nome <br> <span id="nomeSpan"></span></p>
+                <p>E-mail <br> <span id="emailSpan"></span></p>
+                <p>Nivel do usuario <br> <span id="cargoSpan"></span></p>
+                <p>Personagem favorito <br><span id="personagemSpan"></span></p>
+                <p>Arco favorito <br><span id="arcoSpan"></span></p>
+                <p>Preferencia de visualização <br><span id="visualizacaoSpan"></span></p>
+            </div>
+        </section>
+        <section class="principal">
+            <div id="exibirAlertFormulario">
+
+               
+
+           
+        </section>
+    </div>
+
 </body>
+
 </html>
 
 <script>
 
-    nome.innerHTML =    sessionStorage.NOME_USUARIO;
+    nomeSpan.innerHTML = sessionStorage.NOME_USUARIO;
+    emailSpan.innerHTML = sessionStorage.EMAIL_USUARIO;
+
+    if (sessionStorage.CARGO_USUARIO == "padão") {
+        cargoSpan.innerHTML = `Tripulante`;
+    } else {
+        cargoSpan.innerHTML = `Capitão`;
+    }
+
+    console.log(sessionStorage.PersonagemF_USUARIO);
+
+    if (sessionStorage.PersonagemF_USUARIO == "null") {
+        personagemSpan.innerHTML = `Você ainda não tem um personagem favorito :(`
+        exibirAlertFormulario.innerHTML += `
+         <div class="caixaInformacao padaoInformacao">
+                <div class="titulo padraotitulo">
+                    <h1>Qual seu personagem favorito?</h1>
+                </div>
+                <div class="conteudoInformacao ">
+
+                    <p>Clique no botão ao lado e responda ao formulario sobre o seu personagem favorito para poder ajudar nas analizes de preferencia dos usuarios.</p><br>
+                    <a class="padaoBotao"  href="formPersonagem.html">Responder formulario</a>
+                </div>
+            </div>`;
+    } else {
+        personagemSpan.innerHTML = sessionStorage.PersonagemF_USUARIO
+
+    }
+
+    if (sessionStorage.ARCOF_USUARIO == "null") {
+        arcoSpan.innerHTML = `Você ainda não tem um Arco favorito :(`
+        exibirAlertFormulario.innerHTML += ` 
+          <div class="caixaInformacao padaoInformacao">
+                <div class="titulo padraotitulo">
+                    <h1>Qual seu arco favorito?</h1>
+                </div>
+                <div class="conteudoInformacao  ">
+
+                    <p>Clique no botão abaixo e responda ao formulario sobre o seu arco favorito para poder ajudar nas analizes de preferencia dos usuarios.</p><br>
+                    <a class="padaoBotao"  href="formPersonagem.html">Responder formulario</a>
+                </div>
+            </div>`;
+    }
+    else {
+        arcoSpan.innerHTML = sessionStorage.ARCOF_USUARIO
+    }
+
+
+    if (sessionStorage.VISUALIZACAO_USUARIO == undefined ) {
+        visualizacaoSpan.innerHTML = `Você ainda não acompanha a obra :(`
+        exibirAlertFormulario.innerHTML += ` 
+          <div class="caixaInformacao padaoInformacao">
+                <div class="titulo padraotitulo">
+                    <h1>De que maneira você acompanha One Piece?</h1>
+                </div>
+                <div class="conteudoInformacao  ">
+
+                    <p>Clique no botão abaixo e responda ao formulario sobre o seu arco favorito para poder ajudar nas analizes de preferencia dos usuarios.</p><br>
+                    <a class="padaoBotao"  href="formPersonagem.html">Responder formulario</a>
+                </div>
+            </div>`;
+    }
+    else {
+        visualizacaoSpan.innerHTML = sessionStorage.VISUALIZACAO_USUARIO
+        exibirAlertFormulario.innerHTML += ` 
+        <div class="caixaInformacao padaoInformacao">
+                    <div class="titulo padraotitulo">
+                        <h1>Criar teoria!</h1>
+                    </div>
+                    <div class="conteudoInformacao ">
+    
+                        <p>Ao clicar no botão abaixo você será redirecionado para um espaço onde você vai poder escrever e publicar suas teoria sobre One Piece.</p><br>
+                        <a class="padaoBotao" href="criadorDeTeoria.html">Criar teoria</a>
+                    </div>
+                </div>
+            </div>`;
+    }
+
+
+    
+
+
+    FotoSpan.innerHTML = ` <i class="fa-solid fa-user"></i>`;
+
 </script>

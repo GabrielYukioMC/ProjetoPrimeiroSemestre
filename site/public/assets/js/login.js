@@ -71,6 +71,12 @@ function entrar() {
 
                 sessionStorage.EMAIL_USUARIO = json.email;
                 sessionStorage.NOME_USUARIO = json.nome;
+                sessionStorage.CARGO_USUARIO = json.cargo;
+                sessionStorage.CORPAG_USUARIO = json.corPag;
+                sessionStorage.PersonagemF_USUARIO = json.fkPersonagemF;
+                sessionStorage.ARCOF_USUARIO = json.fkArcoF;
+                sessionStorage.VISUALIZACAO_USUARIO = json.meioVisualizacao;
+                
                 sessionStorage.ID_USUARIO = json.idUsuario;
 
                 setTimeout(() => {
@@ -81,7 +87,7 @@ function entrar() {
                     }, "2000")
 
                     setTimeout(function () {
-                        window.location = "/";
+                        window.location = "usuario.html";
                     }, 2000);
                 }, "2000")
 
