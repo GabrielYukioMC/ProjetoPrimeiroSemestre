@@ -20,4 +20,12 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+router.post("/update", function (req, res) {
+    usuarioController.update(req, res);
+});
+
+router.post("/updatePerArc", function (req, res) {
+    usuarioController.updatePerArc(req, res);
+});
+
 module.exports = router;

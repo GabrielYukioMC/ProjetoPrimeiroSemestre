@@ -43,12 +43,12 @@
 
     <!-- ^------------- Menu ---------------^ -->
 
-<!-- *ajustar a cor de acordo com o tipo de cor de pagina* -->
+    <!-- *ajustar a cor de acordo com o tipo de cor de pagina* -->
 
     <div class="caixaTotalUsuario padraoTotal">
         <section class="lateral pradaoLateral">
             <div class="caixaFotoUsuario padraoLateralFoto">
-                <span id="FotoSpan"></span>
+                <span id="FotoSpan"> <i class="fa-solid fa-user"></i></span>
             </div>
             <div class="caixaDadosUsuario">
 
@@ -57,106 +57,88 @@
                 <p>Nivel do usuario <br> <span id="cargoSpan"></span></p>
                 <p>Personagem favorito <br><span id="personagemSpan"></span></p>
                 <p>Arco favorito <br><span id="arcoSpan"></span></p>
-                <p>Preferencia de visualização <br><span id="visualizacaoSpan"></span></p>
+                <p>Preferencia de visualização <br><span id="visualizacaoSpan"></span></p><br>
             </div>
         </section>
+
+        <!-- ^parte principal da pagina^ -->
         <section class="principal">
-            <div id="exibirAlertFormulario">
+            <div id="exibirAlertFormulario"></div>
 
-               
 
-           
+            <div id="modalV" class="modalV none">
+                <div class="titulo">
+                    <h1>Como você acompanha a obra?</h1> <span id="fechar"><i class="fa-solid fa-xmark"></i></span>
+                </div>
+                <div class="conteudoModal">
+                    <p>Escolha a opção que melhor se adapta a você.</p>
+                    <p>O resultado dessa pesquisa pode ser visualizada no grafico <span> Preferências de leitura e
+                            visualização</span> que se localiza na pagina inical do site.</p>
+                    <div class="caixaops">
+                        <select id="OpV" name="OpV">
+                            <option value="Anime">Anime</option>
+                            <option value="Manga">Manga</option>
+                            <option value="Ambos">Ambos</option>
+                        </select>
+                        <button onclick="buttonEnviarRespostaV()">Enviar resposta</button>
+                    </div>
+                    <span id="mensagemRForm"></span>
+                </div>
+            </div>
+
+
+            <div id="modalP" class="modalV none">
+                <div class="titulo">
+                    <h1>Qual o seu personagem favorito?</h1> <span id="fechar2"><i class="fa-solid fa-xmark"></i></span>
+                </div>
+                <div class="conteudoModal">
+                    <p>Escolha a opção que melhor se adapta a você.</p>
+                   
+                    <div class="caixaops">
+                        <select id="OpP" name="OpP">
+                            <option value="Monkey D. Luffy">Monkey D. Luffy</option>
+                            <option value="Roronoa Zoro">Roronoa Zoro</option>
+                            <option value="Nami">Nami</option>
+                            <option value="Usopp">Usopp</option>
+                            <option value="Vinsmoke Sanji">Vinsmoke Sanji</option>
+                            <option value="Tony Tony Chopper">Tony Tony Chopper</option>
+                            <option value="Nico Robin">Nico Robin</option>
+                            <option value="Cutty Flam / Franky">Franky</option>
+                            <option value="Brook">Brook</option>
+                            <option value="Jinbe">Jinbe</option>
+
+                        </select>
+                        <button onclick="buttonEnviarResposta()">Enviar resposta</button>
+                    </div>
+                    <span id="mensagemRForm"></span>
+                </div>
+            </div>
+
+
+
+            <div id="modalA" class="modalV none">
+                <div class="titulo">
+                    <h1>Como você acompanha a obra?</h1> <span id="fechar3"><i class="fa-solid fa-xmark"></i></span>
+                </div>
+                <div class="conteudoModal">
+                    <p>Escolha a opção que melhor se adapta a você.</p>
+                    <p>O resultado dessa pesquisa pode ser visualizada no grafico <span> Preferências de leitura e
+                            visualização</span> que se localiza na pagina inical do site.</p>
+                    <div class="caixaops">
+                        <select id="OpA" name="OpA">
+                            <option value="Anime">Anime</option>
+                            <option value="Manga">Manga</option>
+                            <option value="Ambos">Ambos</option>
+                        </select>
+                        <button onclick="buttonEnviarRespostaV()">Enviar resposta</button>
+                    </div>
+                    <span id="mensagemRForm"></span>
+                </div>
+            </div>
         </section>
     </div>
 
 </body>
 
 </html>
-
-<script>
-
-    nomeSpan.innerHTML = sessionStorage.NOME_USUARIO;
-    emailSpan.innerHTML = sessionStorage.EMAIL_USUARIO;
-
-    if (sessionStorage.CARGO_USUARIO == "padão") {
-        cargoSpan.innerHTML = `Tripulante`;
-    } else {
-        cargoSpan.innerHTML = `Capitão`;
-    }
-
-    console.log(sessionStorage.PersonagemF_USUARIO);
-
-    if (sessionStorage.PersonagemF_USUARIO == "null") {
-        personagemSpan.innerHTML = `Você ainda não tem um personagem favorito :(`
-        exibirAlertFormulario.innerHTML += `
-         <div class="caixaInformacao padaoInformacao">
-                <div class="titulo padraotitulo">
-                    <h1>Qual seu personagem favorito?</h1>
-                </div>
-                <div class="conteudoInformacao ">
-
-                    <p>Clique no botão ao lado e responda ao formulario sobre o seu personagem favorito para poder ajudar nas analizes de preferencia dos usuarios.</p><br>
-                    <a class="padaoBotao"  href="formPersonagem.html">Responder formulario</a>
-                </div>
-            </div>`;
-    } else {
-        personagemSpan.innerHTML = sessionStorage.PersonagemF_USUARIO
-
-    }
-
-    if (sessionStorage.ARCOF_USUARIO == "null") {
-        arcoSpan.innerHTML = `Você ainda não tem um Arco favorito :(`
-        exibirAlertFormulario.innerHTML += ` 
-          <div class="caixaInformacao padaoInformacao">
-                <div class="titulo padraotitulo">
-                    <h1>Qual seu arco favorito?</h1>
-                </div>
-                <div class="conteudoInformacao  ">
-
-                    <p>Clique no botão abaixo e responda ao formulario sobre o seu arco favorito para poder ajudar nas analizes de preferencia dos usuarios.</p><br>
-                    <a class="padaoBotao"  href="formPersonagem.html">Responder formulario</a>
-                </div>
-            </div>`;
-    }
-    else {
-        arcoSpan.innerHTML = sessionStorage.ARCOF_USUARIO
-    }
-
-
-    if (sessionStorage.VISUALIZACAO_USUARIO == undefined ) {
-        visualizacaoSpan.innerHTML = `Você ainda não acompanha a obra :(`
-        exibirAlertFormulario.innerHTML += ` 
-          <div class="caixaInformacao padaoInformacao">
-                <div class="titulo padraotitulo">
-                    <h1>De que maneira você acompanha One Piece?</h1>
-                </div>
-                <div class="conteudoInformacao  ">
-
-                    <p>Clique no botão abaixo e responda ao formulario sobre o seu arco favorito para poder ajudar nas analizes de preferencia dos usuarios.</p><br>
-                    <a class="padaoBotao"  href="formPersonagem.html">Responder formulario</a>
-                </div>
-            </div>`;
-    }
-    else {
-        visualizacaoSpan.innerHTML = sessionStorage.VISUALIZACAO_USUARIO
-        exibirAlertFormulario.innerHTML += ` 
-        <div class="caixaInformacao padaoInformacao">
-                    <div class="titulo padraotitulo">
-                        <h1>Criar teoria!</h1>
-                    </div>
-                    <div class="conteudoInformacao ">
-    
-                        <p>Ao clicar no botão abaixo você será redirecionado para um espaço onde você vai poder escrever e publicar suas teoria sobre One Piece.</p><br>
-                        <a class="padaoBotao" href="criadorDeTeoria.html">Criar teoria</a>
-                    </div>
-                </div>
-            </div>`;
-    }
-
-
-    
-
-
-    FotoSpan.innerHTML = ` <i class="fa-solid fa-user"></i>`;
-
-</script>
+<script src="assets/js/usuario.js"></script>

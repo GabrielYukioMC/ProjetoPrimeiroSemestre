@@ -94,9 +94,85 @@ function cadastrar(req, res) {
     }
 }
 
+
+
+function update(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var resposta = req.body.respostaServer;
+    var id = req.body.idServer;
+    var campo = req.body.campoServer;
+
+    // Faça as validações dos valores
+    if (resposta == undefined) {
+        res.status(400).send("Sua resposta está undefined!");
+    } else if (id == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else if (campo == undefined) {
+        res.status(400).send("Seu campo está undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.update(resposta, id, campo)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
+
+function updatePerArc(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var resposta = req.body.respostaServer;
+    var id = req.body.idServer;
+    var campo = req.body.campoServer;
+
+    // Faça as validações dos valores
+    if (resposta == undefined) {
+        res.status(400).send("Sua resposta está undefined!");
+    } else if (id == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else if (campo == undefined) {
+        res.status(400).send("Seu campo está undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.updatePerArc(resposta, id, campo)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    update,
+    updatePerArc
 }

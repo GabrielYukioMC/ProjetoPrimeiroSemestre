@@ -20,7 +20,7 @@
     justify-content: space-between;
     background: var(--background_menu);
     border-bottom: 3px solid var(--color_border_menu);
-    height: 50px;
+    height: 40px;
     padding-left: 5%;
     padding-right: 5%;
 }
@@ -33,14 +33,14 @@
     display: flex;
     text-align: center;
     align-items: center;
-    font-size: 25px;
+    font-size: 22px;
     color: var(--color_segundaria_texto_menu);
 }
 
 .areaLogo span{
     color: rgb(255, 111, 0);
     /* position: fixed; */
-    font-size: 60px;
+    font-size: 50px;
 }
 
 .menu ul li {
@@ -55,7 +55,7 @@
 }
 
 .menu ul .areaServisos li a {
-    font-size: 20px;
+    font-size: 18px;
     display: block;
     color: var(--color_segundaria_texto_menu);
     

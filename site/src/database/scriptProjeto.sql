@@ -144,7 +144,7 @@ values
         'Bando do Chapéu de Palha',
         'possivel imediato',
         'caçador de piratas',
-       ' 1.111.000.000',
+        ' 1.111.000.000',
         'zoroPreTimeSkip.webp',
         'zoroPosTimeSkip.png',
         'Roronoa Zoro, que um dia já foi caçador de piratas, é um espadachim que almeja ser o mais forte de todos. Foi o primeiro a entrar no bando piratas do Chapéu de Palha, liderado por Luffy, quando foi resgatado pelo sorridente garoto de borracha em Shells Town, no arco Romance Dawn. O carisma e o senso de justiça de Luffy convenceram Zoro de que era possível confiar em alguém, mesmo que esse alguém fosse um pirata.'
@@ -155,7 +155,7 @@ values
         'Bando do Chapéu de Palha',
         'Navegadora',
         'Gatuna',
-       ' 366.000.000',
+        ' 366.000.000',
         'namiPreTimeSkip.webp',
         'namiPosTimeSkip.webp',
         'Nami, a ladra que controla o clima, e também nossa grande navegadora, entra oficialmente para o bando no arco de Arlong Park, quando seu passado triste é exposto e finalmente alguém pode livrá-la da vida de servidão ao bando vilanesco de homens peixe liderado por Arlong. Nami, que antes não era capaz de confiar em ninguém além de si mesma, finalmente encontra um lugar onde pode se sentir segura com os novos companheiros.'
@@ -177,7 +177,6 @@ values
         'Bando do Chapéu de Palha',
         'Cozinheiro',
         'Black Lag',
-  '      1.032.000.000',
         'sanjiPreTimeSkip.webp',
         'sanjiPosTimeSkip.webp',
         'Com ele não pode sobrar comida no prato e ninguém passa fome. Sanji é o cozinheiro do bando, que cresceu inspirado por seu pai adotivo e chefe de cozinha, Zeff. Quando o bando de Luffy visita o barco-restaurante em que trabalha, Baratiê, em busca de um cozinheiro, Sanji é incentivado por seu pai a buscar seu próprio caminho e seu sonho de conhecer o ALL BLUE, um mar no qual todas as criaturas marinhas do mundo se encontram, mas que, até agora, ainda é lenda.'
@@ -232,11 +231,13 @@ values
         'Bando do Chapéu de Palha',
         'Timoneiro',
         'Cavaleiiro do mar',
-       ' 1.100.000.000',
+        ' 1.100.000.000',
         'jinbePosTimeSkip.webp',
         'jinbePosTimeSkip.webp',
         'Jinbe é um homem peixe que carrega consigo o fardo de sonhar por um mundo mais igual, sem preconceitos, e luta por isso com as próprias mãos, usando o karatê dos homens peixe. Jinbei, que um dia já foi como Arlong, vilão da primeira saga, muda quando se inspira nos ideais de Fisher Tiger e vê a igualdade almejada no bando dos chapéus de palha, seguindo com eles na função de timoneiro para guiar os sonhos da tribulação em busca de seus ideais depois do arco da ilha dos homens-peixe.'
     );
 
 desc usuario;
+
+
 drop database projeto;

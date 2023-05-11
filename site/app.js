@@ -15,6 +15,8 @@ var medidasRouter = require("./src/routes/medidas");
 var sagasRouter = require("./src/routes/sagas");
 var personagensRouter = require("./src/routes/personagens")
 
+// var erroRouter = require("./src/routes/R404");
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
@@ -27,6 +29,8 @@ app.use("/avisos", avisosRouter);
 app.use("/medidas", medidasRouter);
 app.use("/sagas", sagasRouter);
 app.use("/personagens", personagensRouter);
+
+
 
 
 
