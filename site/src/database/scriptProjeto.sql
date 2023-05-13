@@ -4,14 +4,14 @@ use projeto;
 
 create table saga (
     idSaga int primary key auto_increment,
-    nomeSaga varchar(45),
+    nome varchar(45),
     descricaoSaga varchar(900),
     logoSaga varchar(45)
 ) auto_increment = 1000;
 
 create table arco (
     idArco int auto_increment primary key,
-    nomeArco varchar(45),
+    nome varchar(45),
     descArco varchar(900),
     logoArco varchar(45),
     qtdEps int,
@@ -28,7 +28,7 @@ create table personagem (
     recompensa varchar(20),
     imgPre varchar(45),
     imgPos varchar(45),
-    historia varchar (800)
+    historia varchar (900)
 ) auto_increment = 500;
 
 create table usuario (
@@ -41,9 +41,9 @@ create table usuario (
     dtcadastro datetime default current_timestamp,
     corPag varchar(45),
     fkPersonagemF int,
-    fkArcoF int,
+    fksagaF int,
     constraint fkP foreign key (fkPersonagemF) references personagem(idPersonagem),
-    constraint fkS foreign key(fkArcoF) references arco(idArco),
+    constraint fkS foreign key(fksagaF) references saga(idSaga),
     constraint cargos check(
         cargo = 'Padão'
         or cargo = 'Principal'
@@ -63,7 +63,7 @@ create table comentario (
 select
     *
 from
-    usuario;
+    saga;
 
 insert into
     saga
@@ -177,6 +177,7 @@ values
         'Bando do Chapéu de Palha',
         'Cozinheiro',
         'Black Lag',
+        '1.032.000.000',
         'sanjiPreTimeSkip.webp',
         'sanjiPosTimeSkip.webp',
         'Com ele não pode sobrar comida no prato e ninguém passa fome. Sanji é o cozinheiro do bando, que cresceu inspirado por seu pai adotivo e chefe de cozinha, Zeff. Quando o bando de Luffy visita o barco-restaurante em que trabalha, Baratiê, em busca de um cozinheiro, Sanji é incentivado por seu pai a buscar seu próprio caminho e seu sonho de conhecer o ALL BLUE, um mar no qual todas as criaturas marinhas do mundo se encontram, mas que, até agora, ainda é lenda.'
@@ -190,7 +191,7 @@ values
         '1.000',
         'chopperPreTimeSkip.png',
         'chopperPosTimeSkip.webp',
-        'Tony Tony Chopper pode parecer só uma criatura rena-humana, mas é um médico de enorme coração e um combatente de muito valor. Depois de comer a Hito Hito no Mi, o fruto que o tornou parcialmente humano, foi acolhido pelo doutor Hiluluk, que o ensinou o ofício para exercer medicina. Ingênuo e medroso, mas extremamente sábio, Chopper busca seu lugar no mundo cercado de companheiros que o amam e respeitam, entrando pro bando no arco da Ilha Drum.'
+        'Tony Tony Chopper é um médico de enorme coração e um combatente de muito valor. Depois de comer a Hito Hito no Mi, o fruto que o tornou parcialmente humano, foi acolhido pelo doutor Hiluluk, que o ensinou o ofício para exercer medicina. Ingênuo e medroso. Chopper busca seu lugar no mundo cercado de companheiros que o amam e respeitam.'
     ),
     (
         null,
@@ -234,10 +235,15 @@ values
         ' 1.100.000.000',
         'jinbePosTimeSkip.webp',
         'jinbePosTimeSkip.webp',
-        'Jinbe é um homem peixe que carrega consigo o fardo de sonhar por um mundo mais igual, sem preconceitos, e luta por isso com as próprias mãos, usando o karatê dos homens peixe. Jinbei, que um dia já foi como Arlong, vilão da primeira saga, muda quando se inspira nos ideais de Fisher Tiger e vê a igualdade almejada no bando dos chapéus de palha, seguindo com eles na função de timoneiro para guiar os sonhos da tribulação em busca de seus ideais depois do arco da ilha dos homens-peixe.'
+        'Jinbe é um homem peixe que carrega consigo o fardo de sonhar por um mundo mais igual, sem preconceitos, usando o karatê dos homens peixe. Jinbei, que um dia já foi como Arlong, vilão da primeira saga, muda quando se inspira nos ideais de Fisher Tiger e vê a igualdade almejada no bando dos chapéus de palha, seguindo com eles na função de timoneiro para guiar os sonhos da tribulação em busca de seus ideais depois do arco da ilha dos homens-peixe.'
     );
 
 desc usuario;
+select * from saga;
+select*from personagem;
+select * from usuario;
 
 
-drop database projeto;
+select  personagem.nome , saga.nome  from personagem , saga where  personagem.idPersonagem = 500 and saga.idSaga = 1005 ;
+
+select personagem.nome, saga.nome, usuario.idUsuario from personagem join usuario on fkPersonagemF = idPersonagem join saga on idSaga = fksagaF where idUsuario =2;

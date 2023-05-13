@@ -1,19 +1,19 @@
 var loginSenha = document.getElementById('login_senha_input');
 var mostraL = document.getElementById('mostrarL');
 
-mostraL.addEventListener('click',()=>{
-    if(mostraL.classList.contains( 'fa-eye')){
+mostraL.addEventListener('click', () => {
+    if (mostraL.classList.contains('fa-eye')) {
 
         mostraL.classList.remove('fa-eye')
         mostraL.classList.add('fa-eye-slash')
-        login_senha_input.setAttribute('type','text');
+        login_senha_input.setAttribute('type', 'text');
 
     }
-    else{
+    else {
         mostraL.classList.remove('fa--eye-slash')
         mostraL.classList.add('fa-eye')
-        login_senha_input.setAttribute('type','password');
-     
+        login_senha_input.setAttribute('type', 'password');
+
     }
 })
 
@@ -74,10 +74,13 @@ function entrar() {
                 sessionStorage.CARGO_USUARIO = json.cargo;
                 sessionStorage.CORPAG_USUARIO = json.corPag;
                 sessionStorage.PersonagemF_USUARIO = json.fkPersonagemF;
-                sessionStorage.ARCOF_USUARIO = json.fkArcoF;
+                sessionStorage.ARCOF_USUARIO = json.fksagaF;
                 sessionStorage.VISUALIZACAO_USUARIO = json.meioVisualizacao;
-                
+
                 sessionStorage.ID_USUARIO = json.idUsuario;
+
+                sessionStorage.FKPERSONAGEM_USUARIO = null
+                sessionStorage.FKARCO_USUARIO = null
 
                 setTimeout(() => {
 
@@ -112,6 +115,9 @@ function entrar() {
     }).catch(function (erro) {
         console.log(erro);
     })
+
+
+
 
     return false;
 }

@@ -13,16 +13,16 @@ fetch("/sagas/listar").then(function (resposta) {
                 var publicacao = resposta[i];
 
                 sessoesSagas.innerHTML += `
-                <section class="sessoes ${publicacao.nomeSaga}">
+                <section class="sessoes ${publicacao.nome}">
                   <div class="caixaSaga">
                
                     <div class="imagemConteudo"> <img src="assets/img/sagas/${publicacao.logoSaga}" alt=""></div>
                    
                      <div class="textoConteudo">
               
-                      <h1>${publicacao.nomeSaga}</h1>
+                      <h1>${publicacao.nome}</h1>
                        <p>${publicacao.descricaoSaga}</p>
-                       <a href="${publicacao.nomeSaga}.html">Ver Mais...</a>
+                       <a href="${publicacao.nome}.html">Ver Mais...</a>
                    
                      </div>
                      

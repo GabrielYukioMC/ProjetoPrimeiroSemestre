@@ -58,6 +58,15 @@ function updatePerArc(resposta, id, campo) {
 }
 
 
+function listarPerArc(id) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+    select personagem.nome as nomeP, saga.nome as nomeA, usuario.idUsuario as idU from personagem join usuario on fkPersonagemF = idPersonagem join saga on idSaga = fksagaF where idUsuario =${id};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 
 
 module.exports = {
@@ -65,5 +74,6 @@ module.exports = {
     cadastrar,
     listar,
     update,
-    updatePerArc
+    updatePerArc,
+    listarPerArc
 };

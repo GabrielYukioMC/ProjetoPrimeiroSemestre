@@ -28,4 +28,8 @@ router.post("/updatePerArc", function (req, res) {
     usuarioController.updatePerArc(req, res);
 });
 
+router.post("/listarPerArc", function (req, res) {
+    usuarioController.listarPerArc(req, res);
+});
+
 module.exports = router;
