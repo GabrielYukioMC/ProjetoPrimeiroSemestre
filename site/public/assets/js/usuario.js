@@ -3,8 +3,6 @@ nomeSpan.innerHTML = sessionStorage.NOME_USUARIO;
 emailSpan.innerHTML = sessionStorage.EMAIL_USUARIO;
 
 
-
-
 var fkPersonagem = sessionStorage.PersonagemF_USUARIO;
 var fkArco = sessionStorage.ARCOF_USUARIO;;
 var id = sessionStorage.ID_USUARIO;
@@ -319,5 +317,5 @@ function updatePersonagemArco(resposta2, campo) {
 
 
 function enviarPaginaTeoria() {
-    window.location = "teorias.html"
+    window.location = "PagTeoria.html"
 }

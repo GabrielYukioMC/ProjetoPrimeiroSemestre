@@ -1,0 +1,527 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    /* ?fonte? */
+    font-family: 'Times New Roman', Times, serif;
+    /* ?fonte? */
+
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+:root {
+
+    --color_border: #360000;
+
+
+
+    --corPrimaria: #161045;
+    --corSegundaria: #6954f4;
+    --corterciaria: #2211a0;
+
+
+    --corClara: #fff;
+
+    /* --CorTituloTeoria:#8c893a;
+    --CorConteudoTeoria:#cdd962; */
+
+
+    --CorTituloTeoria: #3A758C;
+    --CorConteudoTeoria: #62CDD9;
+
+    --CorTituloComentario: #3a8c44;
+    --CorConteudoComentario: #62d968;
+
+    --CorTituloSpoiler: #8c3a3a;
+    --CorConteudoSpoiler: #d96262;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.areaComentarios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.FormatoPadao {
+    display: flex;
+    flex-direction: column;
+    margin: 1%;
+    width: 80%;
+    border-radius: 12px;
+    height: auto;
+}
+
+.FormatoPadao .titulo {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    padding: 2%;
+    border-radius: 12px 12px 0 0;
+    position: relative;
+
+}
+
+.FormatoPadao .titulo::before {
+    content: "";
+    position: absolute;
+    left: 44%;
+    top: 55%;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+
+}
+
+.FormatoPadao .titulo h1 {
+    font-size: 25px;
+    text-decoration: underline;
+    padding-bottom: 1%;
+}
+
+.FormatoPadao .titulo i {
+    position: absolute;
+    font-size: 25px;
+    padding-bottom: 1%;
+    top: 10px;
+    right: 20px;
+}
+
+
+.FormatoPadao .titulo .informacoesPostagem {
+    display: flex;
+    justify-content: end;
+    margin-right: 2%;
+
+}
+
+.FormatoPadao .titulo .informacoesPostagem h3 {
+    font-size: 15px;
+    margin-right: 2%;
+}
+
+.FormatoPadao .conteudo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    font-size: 17px;
+    padding: 4%;
+    height: 100%;
+    border-radius: 0 0 12px 12px;
+}
+
+/* ^ Cores comentarios^ */
+
+
+
+.teoria .titulo::before {
+    background: var(--CorTituloTeoria);
+
+}
+
+.teoria .titulo {
+    background: var(--CorTituloTeoria);
+    color: var(--corClara);
+}
+
+.teoria .conteudo {
+    background: var(--CorConteudoTeoria);
+    color: var(--corClara);
+}
+
+
+
+.comentario .titulo::before {
+    background: var(--CorTituloComentario);
+
+}
+
+.comentario .titulo {
+    background: var(--CorTituloComentario);
+    color: var(--corClara);
+}
+
+.comentario .conteudo {
+    background: var(--CorConteudoComentario);
+    color: var(--corClara);
+}
+
+
+.spoiler .titulo::before {
+    background: var(--CorTituloSpoiler);
+
+}
+
+.spoiler .titulo {
+    background: var(--CorTituloSpoiler);
+    color: var(--corClara);
+}
+
+.spoiler .conteudo {
+    background: var(--CorConteudoSpoiler);
+    color: var(--corClara);
+}
+
+.CriarComentario {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.caixaInformacao {
+    width: 60%;
+    margin: 2%;
+    border-radius: 15px;
+}
+
+.caixaInformacao .titulo {
+
+    border-radius: 10px 10px 0 0;
+    padding: 2%;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.conteudoInformacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    justify-content: center;
+}
+
+.conteudoInformacao p {
+    padding-top: 1%;
+    font-size: 17px;
+}
+
+
+.conteudoInformacao button {
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 1.5%;
+    transition: 0.6s;
+    background: var(--corPrimaria);
+    color: var(--corClara);
+    box-shadow: 0px 3px 19px 4px rgba(0, 0, 0, 0.75);
+    transition: 0.6s;
+    font-size: 20px;
+    width: 120px;
+}
+
+
+.conteudoInformacao button:hover {
+    width: 130px;
+    transition: 0.6s;
+}
+
+
+
+/* ^cor padão pagina ^ */
+
+
+.pradaoLateral {
+    border-top: 50px solid var(--corPrimaria);
+    border-right: 4px solid var(--corPrimaria);
+    color: var(--corPrimaria);
+}
+
+.padraoLateralFoto {
+    color: #161045;
+    border: 6px solid #161045;
+    background: #f1f5ff;
+}
+
+.padraoTotal {
+    background: #f1f5ff;
+
+}
+
+.padraotitulo {
+    background: #161045;
+    color: #fff;
+}
+
+.padaoBotao {
+    background: #161045;
+    color: #fff;
+}
+
+.padaoInformacao {
+    background: #f1f5ff;
+    border: 4px solid #161045;
+}
+
+
+.modalConteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    border: 2px solid var(--corPrimaria);
+    background: var(--corPrimaria);
+    color: var(--corClara);
+    animation: movimentoModal;
+    animation-duration: 1s;
+}
+
+@keyframes movimentoModal {
+    0% {
+        transform: translateY(100%);
+    }
+
+
+    25% {
+
+        transform: translateY(-10%);
+
+    }
+
+    75% {
+
+        transform: translateY(0%);
+
+    }
+
+    100% {
+
+        transform: translateY(-10px);
+
+    }
+
+}
+
+.modalConteudo .cabecalhoModal {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabecalhoModal {
+    position: relative;
+    margin-bottom: 2%;
+
+}
+
+.modalConteudo .cabecalhoModal i {
+    right: 0;
+    position: absolute;
+    font-size: 25px;
+    padding-bottom: 1%;
+    top: 10px;
+    right: 30px;
+
+}
+
+.modalConteudo .escritaModal {
+    display: flex;
+    justify-content: center;
+}
+
+.escritaInputs {
+    width: 60%;
+}
+
+.escritaInputs label {
+    font-size: 30px;
+
+}
+
+
+.escritaInputs input {
+    background: none;
+    margin-left: 2%;
+    border: none;
+    width: 300px;
+    outline: none;
+    font-size: 30px;
+    color: var(--corClara);
+    border-bottom: 2px solid var(--corClara);
+}
+
+.caixaComentarioModal {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.caixaComentarioModal textarea {
+    resize: none;
+    border: none;
+    font-size: 20px;
+    outline: none;
+    color: var(--corPrimaria);
+    padding: 1%;
+}
+
+.caixaComentarioModal span {
+    position: absolute;
+    right: 3%;
+    top: 5%;
+}
+
+.escolhaTema {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    margin-left: 5%;
+    height: 100%;
+}
+
+.escolhaTema span {
+    width: 50px;
+    height: 50px;
+    margin: 3%;
+    transition: 0.6s;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+.escolhaTema span:hover {
+    width: 60px;
+    height: 60px;
+    transition: 0.6s;
+}
+
+.escolhaTema .comentario {
+    margin-top: 50px;
+    background: var(--CorConteudoComentario);
+}
+
+.escolhaTema .comentario::before {
+    content: "comentario";
+    position: absolute;
+    left: 70px;
+    top: 5px;
+}
+
+.escolhaTema .teoria {
+    background: var(--CorConteudoTeoria);
+}
+
+
+.escolhaTema .teoria::before {
+    content: "teoria";
+    position: absolute;
+    left: 70px;
+    top: 5px;
+}
+
+.escolhaTema .spoiler {
+    background: var(--CorConteudoSpoiler);
+}
+
+
+.escolhaTema .spoiler::before {
+    content: "spoiler";
+    position: absolute;
+    left: 70px;
+    top: 5px;
+}
+
+
+/* ^^^^ */
+
+.caixaBotao {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+
+.caixaBotao button {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.caixaBotao button {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.caixaBotao button:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.caixaBotao button:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    transition: 0.6s;
+    z-index: -1;
+}
+
+.caixaBotao button:hover:before {
+    width: 100%;
+}
+
+
+
+.caixaBotao button {
+    margin: 2%;
+    border: 2px solid var(--corClara);
+    background-color: var(--corPrimaria);
+    color: var(--corClara);
+
+}
+
+.caixaBotao button:before {
+
+    background-color: var(--corClara);
+}
+
+.caixaBotao button:hover {
+    color: var(--corPrimaria);
+    border: 2px solid var(--corPrimaria);
+
+
+}
+
+
+
+.none {
+    display: none;
+}

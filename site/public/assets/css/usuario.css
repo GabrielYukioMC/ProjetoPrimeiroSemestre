@@ -21,6 +21,11 @@ body {
 
 }
 
+body{
+    background: rgb(255,255,255);
+background: linear-gradient(153deg, rgba(255,255,255,1) 11%, rgba(164,159,255,1) 100%);
+}
+
 :root {
 
     --color_border: #360000;

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.one Piece - Teorias</title>
+
+    <link rel="stylesheet" href="assets/css/menu.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/teoria.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <!-- ^------------- Menu ---------------^ -->
+    <header class="menu">
+        <ul>
+            <div class="areaLogo">
+                <li><a href="#"><span>D</span>ONE PIECE</a></li>
+
+            </div>
+            <div class="areaServisos">
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="PrincipalSagas.html">Sagas</a></li>
+                <li><a href="PrincipalPersonagens.html">Personagens</a></li>
+
+                <li><a href="SobreProjeto.html">Sobre o projeto</a></li>
+                <li><a href="#">Teorias</a></li>
+                <li id="loginUsuario"></li>
+            </div>
+        </ul>
+    </header>
+
+
+
+    <!-- ^------------- Menu ---------------^ -->
+
+
+    <!-- & teorias - comentarios - spoilers || manga/anime & -->
+    <main>
+        <div class="CriarComentario">
+            <div class="caixaInformacao padaoInformacao">
+                <div class="titulo padraotitulo">
+                    <h1>Escrever comentario</h1>
+                </div>
+                <div class="conteudoInformacao ">
+                    <p>Agora que você já responteu os formularios você pode escrever suas ideias, suas teorias, fazer
+                        comentarios sobre a obra e se quiser pode ate comentar sobre algum spoiler que você viu</p>
+                    <br>
+                    <button onclick="AbrirModalComentario()">Comentar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalConteudo" class="modalConteudo none">
+            <div class="cabecalhoModal">
+                <h1>Criar comentario</h1><span id="fechar"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+
+            <div class="escritaModal">
+                <div class="escritaInputs">
+                    <label for="tituloCriacao">Titulo</label><input type="text" name="tituloCriacao" id="tituloCriacao"
+                        autocomplete="off" maxlength="20"><br>
+                    <div class="caixaComentarioModal">
+                        <label for="textoComentarioCriacao">Comentario</label>
+                        <span id="numCaracter">0/1500</span>
+                        <textarea name="textoComentarioCriacao" id="textoComentarioCriacao" cols="30" maxlength="1500" rows="10"
+                            autocomplete="off"></textarea>
+                    </div>
+                </div>
+                <div class="escolhaTema">
+                    <h3>Tema do conteudo</h3>
+                    <span id="SpanComentario" class="comentario"></span>
+                    <span id="SpanTeoria" class="teoria"></span>
+                    <span id="SpanSpoiler" class="spoiler"></span>
+
+                    <br><br>
+                    <span id="tipoTema"></span>
+                </div>
+            </div>
+
+          <div class="caixaBotao">
+            <button onclick="exibir()">enviar comentario</button>
+          </div>
+        </div>
+
+        <section class="areaComentarios">
+
+
+
+                <div class="FormatoPadao teoria">
+                    <div class="titulo">
+                        <h1><span id="tituloView"></span></h1> <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <div class="informacoesPostagem">
+                            <h3>Autor: </h3>
+                            <h3>referente: </h3>
+                            <h3>data: </h3>
+                        </div>
+                    </div>
+                    <div class="conteudo">
+                        <p>
+                            <span id="textoView"></span>
+                        </p>
+                    </div>
+                </div>
+
+            <div class="FormatoPadao comentario">
+                <div class="titulo">
+                    <h1>Shanks é um guerreiro de Deus?</h1> <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <div class="informacoesPostagem">
+                        <h3>Autor: Gabriel Yukio</h3>
+                        <h3>referente: Anime/Manga</h3>
+                        <h3> 13/05/2023</h3>
+                    </div>
+                </div>
+                <div class="conteudo">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam qui quisquam eligendi iure
+                        repudiandae deleniti sunt odio saepe totam, molestias ullam corrupti accusantium consectetur!
+                        Officia pariatur nesciunt mollitia libero aliquid.Lorem ipsum dolor sit amet consectetur,
+                        adipisicing elit. Magnam qui quisquam eligendi iure repudiandae deleniti sunt odio saepe totam,
+                        molestias ullam corrupti accusantium consectetur! Officia pariatur nesciunt mollitia libero
+                        aliquid.Lorem ipsum dolor sit amet consectetur, adipisicing
+                    </p>
+                </div>
+            </div>
+            <div class="FormatoPadao spoiler">
+                <div class="titulo">
+                    <h1>Shanks é um guerreiro de Deus?</h1> <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <div class="informacoesPostagem">
+                        <h3>Autor: Gabriel Yukio</h3>
+                        <h3>referente: Anime/Manga</h3>
+                        <h3> 13/05/2023</h3>
+                    </div>
+                </div>
+                <div class="conteudo">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam qui quisquam eligendi iure
+                        repudiandae deleniti sunt odio saepe totam, molestias ullam corrupti accusantium consectetur!
+                        Officia pariatur nesciunt mollitia libero aliquid.Lorem ipsum dolor sit amet consectetur,
+                        adipisicing elit. Magnam qui quisquam eligendi iure repudiandae deleniti sunt odio saepe totam,
+                        molestias ullam corrupti accusantium consectetur! Officia pariatur nesciunt mollitia libero
+                        aliquid.Lorem ipsum dolor sit amet consectetur, adipisicing
+                    </p>
+                </div>
+
+
+        </section>
+    </main>
+
+
+    <!-- ^ rodape ^ -->
+    <footer>
+        <ul class="parte informacoes">
+            <li>(11)9999-9999</li>
+            <li>email@gmail.com</li>
+            <li>email.sptech.school</li>
+            <li>Ra:01231139</li>
+        </ul>
+        <ul class="parte menu_footer">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="PrincipalSagas.html">Sagas</a></li>
+            <li><a href="PrincipalPersonagens.html">Personagens</a></li>
+
+            <li><a href="#">Sobre o projeto</a></li>
+            <li><a href="PagTeoria.html">Teorias</a></li>
+        </ul>
+        <ul class="parte redes">
+            <li><a target="_blank" href="https://github.com/GabrielYukioMC/ProjetoPrimeiroSemestre.git"><i
+                        class="fa-brands fa-github  github"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-facebook  facebook"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram  instagram"></i></a></li>
+        </ul>
+    </footer>
+    <!-- ^ rodape ^ -->
+
+</body>
+
+</html>
+
+<script src="assets/js/menu.js"></script>
+<script src="assets/js/teoria.js"></script>
