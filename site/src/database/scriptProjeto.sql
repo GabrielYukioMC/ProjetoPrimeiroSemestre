@@ -52,12 +52,15 @@ create table usuario (
 
 create table comentario (
     idComentario int primary key auto_increment,
-    tituloComentario varchar(45),
-    conteudo varchar(300),
+    tituloComentario varchar(20),
+    conteudo varchar(1500),
+    tipoComentario varchar(45),
     fkAutor int,
     dtPublicacao datetime default current_timestamp,
     constraint fkA foreign key (fkAutor) references usuario(idUsuario)
 );
+
+drop table comentario;
 
 /* insert into usuario values (null, 'jose','jj','ska','ccc',default); */
 select
@@ -239,11 +242,72 @@ values
     );
 
 desc usuario;
-select * from saga;
-select*from personagem;
-select * from usuario;
 
+select
+    *
+from
+    saga;
 
-select  personagem.nome , saga.nome  from personagem , saga where  personagem.idPersonagem = 500 and saga.idSaga = 1005 ;
+select
+    *
+from
+    personagem;
 
-select personagem.nome, saga.nome, usuario.idUsuario from personagem join usuario on fkPersonagemF = idPersonagem join saga on idSaga = fksagaF where idUsuario =2;
+select
+    *
+from
+    usuario;
+
+select
+    personagem.nome,
+    saga.nome
+from
+    personagem,
+    saga
+where
+    personagem.idPersonagem = 500
+    and saga.idSaga = 1005;
+
+select
+    personagem.nome,
+    saga.nome,
+    usuario.idUsuario
+from
+    personagem
+    join usuario on fkPersonagemF = idPersonagem
+    join saga on idSaga = fksagaF
+where
+    idUsuario = 2;
+
+/* insert comentario */
+insert into
+    comentario (
+        tituloComentario,
+        conteudo,
+        tipoComentario,
+        fkAutor,
+        dtPublicacao
+    )
+values
+    (
+        'Lili?',
+        'imu-sama pode ser a rainha lili  de alabasta ou outra pessoa do seculo perdido.',
+        'teoria',
+        (
+            select
+                idUsuario
+            from
+                usuario
+            where
+                email = 'cs@'
+        ),
+        default
+    )
+select
+    comentario.idComentario,
+    comentario.tituloComentario,
+    comentario.conteudo,
+    comentario.tipoComentario,
+    usuario.nome,
+    usuario.meioVisualizacao
+from comentario join usuario on idUsuario = fkAutor order by idComentario desc;

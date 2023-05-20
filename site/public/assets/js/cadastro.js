@@ -5,29 +5,29 @@ var senhaConf = document.getElementById('ConfSenha_input');
 
 
 
-mostra.addEventListener('click',()=>{
-    if(mostra.classList.contains( 'fa-eye')){
+mostra.addEventListener('click', () => {
+    if (mostra.classList.contains('fa-eye')) {
         mostra.classList.remove('fa-eye')
         mostra.classList.add('fa-eye-slash')
-        senha.setAttribute('type','text');
-    }else{
+        senha.setAttribute('type', 'text');
+    } else {
         mostra.classList.remove('fa--eye-slash')
         mostra.classList.add('fa-eye')
-        senha.setAttribute('type','password');
-     
+        senha.setAttribute('type', 'password');
+
     }
 })
 
-mostrarConf.addEventListener('click',()=>{
-    if(mostrarConf.classList.contains( 'fa-eye')){
+mostrarConf.addEventListener('click', () => {
+    if (mostrarConf.classList.contains('fa-eye')) {
         mostrarConf.classList.remove('fa-eye')
         mostrarConf.classList.add('fa-eye-slash')
-        senhaConf.setAttribute('type','text');
-    }else{
+        senhaConf.setAttribute('type', 'text');
+    } else {
         mostrarConf.classList.remove('fa--eye-slash')
         mostrarConf.classList.add('fa-eye')
-        senhaConf.setAttribute('type','password');
-     
+        senhaConf.setAttribute('type', 'password');
+
     }
 })
 
@@ -65,7 +65,7 @@ function cadastrar() {
         setTimeout(() => {
             CampoEmailAlert.classList.add('none')
         }, "2000")
-       
+
         return false;
 
     } else if (senhaVar != confirmacaoSenhaVar) {
@@ -119,3 +119,4 @@ function cadastrar() {
 
     return false;
 }
+

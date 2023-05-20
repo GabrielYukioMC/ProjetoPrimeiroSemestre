@@ -45,18 +45,8 @@
 
     <!-- & teorias - comentarios - spoilers || manga/anime & -->
     <main>
-        <div class="CriarComentario">
-            <div class="caixaInformacao padaoInformacao">
-                <div class="titulo padraotitulo">
-                    <h1>Escrever comentario</h1>
-                </div>
-                <div class="conteudoInformacao ">
-                    <p>Agora que você já responteu os formularios você pode escrever suas ideias, suas teorias, fazer
-                        comentarios sobre a obra e se quiser pode ate comentar sobre algum spoiler que você viu</p>
-                    <br>
-                    <button onclick="AbrirModalComentario()">Comentar</button>
-                </div>
-            </div>
+        <div id="CriarComentario" class="CriarComentario">
+            
         </div>
 
         <div id="modalConteudo" class="modalConteudo none">
@@ -67,7 +57,7 @@
             <div class="escritaModal">
                 <div class="escritaInputs">
                     <label for="tituloCriacao">Titulo</label><input type="text" name="tituloCriacao" id="tituloCriacao"
-                        autocomplete="off" maxlength="20"><br>
+                        autocomplete="off" maxlength="20"> <span id="numCaracterTitulo">0/20</span><br>
                     <div class="caixaComentarioModal">
                         <label for="textoComentarioCriacao">Comentario</label>
                         <span id="numCaracter">0/1500</span>
@@ -87,71 +77,14 @@
             </div>
 
           <div class="caixaBotao">
-            <button onclick="exibir()">enviar comentario</button>
+            <button onclick="CadastrarComentario()">enviar comentario</button>
           </div>
         </div>
 
-        <section class="areaComentarios">
+        <section id="areaComentarios" class="areaComentarios">
 
 
-
-                <div class="FormatoPadao teoria">
-                    <div class="titulo">
-                        <h1><span id="tituloView"></span></h1> <i class="fa-solid fa-ellipsis-vertical"></i>
-                        <div class="informacoesPostagem">
-                            <h3>Autor: </h3>
-                            <h3>referente: </h3>
-                            <h3>data: </h3>
-                        </div>
-                    </div>
-                    <div class="conteudo">
-                        <p>
-                            <span id="textoView"></span>
-                        </p>
-                    </div>
-                </div>
-
-            <div class="FormatoPadao comentario">
-                <div class="titulo">
-                    <h1>Shanks é um guerreiro de Deus?</h1> <i class="fa-solid fa-ellipsis-vertical"></i>
-                    <div class="informacoesPostagem">
-                        <h3>Autor: Gabriel Yukio</h3>
-                        <h3>referente: Anime/Manga</h3>
-                        <h3> 13/05/2023</h3>
-                    </div>
-                </div>
-                <div class="conteudo">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam qui quisquam eligendi iure
-                        repudiandae deleniti sunt odio saepe totam, molestias ullam corrupti accusantium consectetur!
-                        Officia pariatur nesciunt mollitia libero aliquid.Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit. Magnam qui quisquam eligendi iure repudiandae deleniti sunt odio saepe totam,
-                        molestias ullam corrupti accusantium consectetur! Officia pariatur nesciunt mollitia libero
-                        aliquid.Lorem ipsum dolor sit amet consectetur, adipisicing
-                    </p>
-                </div>
-            </div>
-            <div class="FormatoPadao spoiler">
-                <div class="titulo">
-                    <h1>Shanks é um guerreiro de Deus?</h1> <i class="fa-solid fa-ellipsis-vertical"></i>
-                    <div class="informacoesPostagem">
-                        <h3>Autor: Gabriel Yukio</h3>
-                        <h3>referente: Anime/Manga</h3>
-                        <h3> 13/05/2023</h3>
-                    </div>
-                </div>
-                <div class="conteudo">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam qui quisquam eligendi iure
-                        repudiandae deleniti sunt odio saepe totam, molestias ullam corrupti accusantium consectetur!
-                        Officia pariatur nesciunt mollitia libero aliquid.Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit. Magnam qui quisquam eligendi iure repudiandae deleniti sunt odio saepe totam,
-                        molestias ullam corrupti accusantium consectetur! Officia pariatur nesciunt mollitia libero
-                        aliquid.Lorem ipsum dolor sit amet consectetur, adipisicing
-                    </p>
-                </div>
-
-
+            
         </section>
     </main>
 

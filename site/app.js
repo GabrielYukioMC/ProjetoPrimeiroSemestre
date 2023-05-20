@@ -14,6 +14,7 @@ var avisosRouter = require("./src/routes/avisos");
 var medidasRouter = require("./src/routes/medidas");
 var sagasRouter = require("./src/routes/sagas");
 var personagensRouter = require("./src/routes/personagens")
+var comentarioRouter = require("./src/routes/comentarios");
 
 // var erroRouter = require("./src/routes/R404");
 
@@ -29,7 +30,7 @@ app.use("/avisos", avisosRouter);
 app.use("/medidas", medidasRouter);
 app.use("/sagas", sagasRouter);
 app.use("/personagens", personagensRouter);
-
+app.use("/comentarios", comentarioRouter);
 
 
 
