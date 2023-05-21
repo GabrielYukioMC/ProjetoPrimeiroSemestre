@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <!-- ^^ scripts do Chart.js - 2022-1 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>D.one Piece</title>
   </head>
 
@@ -90,14 +91,16 @@
     <div class="grafico_texto">
       <ul>
         <h1> Preferências de leitura e visualização de One Piece </h1>
-        <li> porcentagem de pessoas que assistem o anime <span>10</span>%</li>
-        <li> porcentagem de pessoas que leem o manga <span>50</span>%</li>
-        <li> porcentagem de pessoas que leem o manga e assistem o anime <span>40</span>%</li>
+        <li> Numero de pessoas no site que assistem o anime <span id="spanQtdAnime"></span></li>
+        <li> Numero de pessoas no site que leem o manga <span id="spanQtdManga"></span></li>
+        <li> Numero de pessoas no site que leem o manga e assistem o anime <span id="spanQtdAmbos"></span></li>
+        <li> Numero total de pessoas no site que acompanham a obra <span id="spanQtdTotal"></span></li>
       </ul>
 
     </div>
-    <div class="caixa_grafico">
-      <canvas id="myChart"></canvas>
+      <div id="grafico1" class="caixa_grafico">
+    
+            <canvas id="myChartCanvas1"></canvas>
     </div>
   </section>
 
@@ -153,3 +156,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="assets/js/script.js"></script>
 <script src="assets/js/menu.js"></script>
+
+
+
+

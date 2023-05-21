@@ -105,6 +105,11 @@ function CadastrarComentario() {
     var TipoVar = modeloComentario;
     var emailUsuarioVar = sessionStorage.EMAIL_USUARIO
 
+
+    if (TituloVar == "" || ConteudoVar == "") {
+        return false;
+    }
+
     // Enviando o valor da nova input
     fetch("/comentarios/cadastrar", {
         method: "POST",
@@ -142,33 +147,33 @@ function CadastrarComentario() {
 
 
 
-
-
-
-
-
-
 fetch("/comentarios/listar").then(function (resposta) {
     if (resposta.ok) {
         if (resposta.status == 204) {
-        
+
             throw "Nenhum personagem encontrado!!";
         }
 
         resposta.json().then(function (resposta) {
             console.log("Dados recebidos: ", JSON.stringify(resposta));
 
-          
+
             for (let i = 0; i < resposta.length; i++) {
                 var publicacao = resposta[i];
-
+                var MeioV;
+                if (publicacao.meioVisualizacao == "Ambos") {
+                    MeioV = "Anime/Manga"
+                } else {
+                    MeioV = publicacao.meioVisualizacao;
+                }
                 areaComentarios.innerHTML += ` 
                 <div class="FormatoPadao ${publicacao.tipoComentario}">
                   <div class="titulo">
                       <h1>${publicacao.tituloComentario}</h1> <i class="fa-solid fa-ellipsis-vertical"></i>
                       <div class="informacoesPostagem">
                           <h3>Autor: ${publicacao.nome}</h3>
-                          <h3>Acompanha: ${publicacao.meioVisualizacao}</h3>
+                          <h3>${publicacao.tipoComentario} sobre ${MeioV}</h3>
+                          
                       </div>
                   </div>
                   <div class="conteudo">

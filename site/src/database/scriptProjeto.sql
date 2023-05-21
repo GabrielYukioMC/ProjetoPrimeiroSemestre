@@ -50,6 +50,8 @@ create table usuario (
     )
 );
 
+insert into usuario values(null,'Gabriel Yukio','gabielyukiomibecoca@gmail.com','senha123','Principal','Ambos',default,'padão',503,1000);
+
 create table comentario (
     idComentario int primary key auto_increment,
     tituloComentario varchar(20),
@@ -302,7 +304,7 @@ values
                 email = 'cs@'
         ),
         default
-    )
+    );
 select
     comentario.idComentario,
     comentario.tituloComentario,
@@ -311,3 +313,14 @@ select
     usuario.nome,
     usuario.meioVisualizacao
 from comentario join usuario on idUsuario = fkAutor order by idComentario desc;
+
+
+select * from usuario;
+select count(meioVisualizacao) as manga, count(meioVisualizacao) as anime, count(meioVisualizacao) as ambos from usuario where meioVisualizacao = 'manga' ;
+
+
+select  
+(select count(meioVisualizacao) from usuario where meioVisualizacao = 'anime') as anime , 
+(select count(meioVisualizacao) from usuario where meioVisualizacao = 'manga') as manga,
+(select count(meioVisualizacao) from usuario where meioVisualizacao = 'ambos')as ambos,
+(select count(meioVisualizacao) from usuario)as total;

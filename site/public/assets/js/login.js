@@ -89,9 +89,17 @@ function entrar() {
                         CampoTudoCertoAlert.classList.add('none')
                     }, "2000")
 
-                    setTimeout(function () {
-                        window.location = "usuario.html";
-                    }, 2000);
+
+                    if ( sessionStorage.CARGO_USUARIO == 'Principal') {
+                        setTimeout(function () {                        
+                            window.location = "principal.html";
+                        }, 2000);
+                    }else{
+                        setTimeout(function () {                        
+                            window.location = "usuario.html";
+                        }, 2000);
+                    }
+                    
                 }, "2000")
 
             });
