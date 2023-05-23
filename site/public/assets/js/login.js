@@ -90,9 +90,9 @@ function entrar() {
                     }, "2000")
 
 
-                    if ( sessionStorage.CARGO_USUARIO == 'Principal') {
+                    if ( sessionStorage.CARGO_USUARIO == 'Admin') {
                         setTimeout(function () {                        
-                            window.location = "principal.html";
+                            window.location = "dashboard.html";
                         }, 2000);
                     }else{
                         setTimeout(function () {                        

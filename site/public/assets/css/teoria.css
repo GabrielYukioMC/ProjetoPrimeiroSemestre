@@ -65,7 +65,7 @@ main {
     display: flex;
     flex-direction: column;
     margin: 1%;
-    width: 80%;
+    width: 1000px;
     border-radius: 12px;
     height: auto;
 }
@@ -123,12 +123,16 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    word-break: break-all;
     text-align: justify;
     font-size: 17px;
     padding: 4%;
     height: 100%;
     border-radius: 0 0 12px 12px;
 }
+
+
+
 
 /* ^ Cores comentarios^ */
 

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="imagem">
+                    <img src="assets/img/sobreProjeto/bandeiraChapeusDePalha.gif" alt="">
+                </span>
+
+                <div class="text header-text">
+                    <span id="nameUsuarioPrincipal" class="name"></span>
+                    <span id="cargoUsuarioPrincipal" class="profession">cargo</span>
+
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-link">
+                    <li class="nav-link">
+                        <span id="dashboardBtn" class="link active ">
+                            <i class='bx bx-home icon'></i>
+                            <span class="text nav-text">dashboard</span>
+
+                        </span>
+                    </li>
+
+                    <li class="nav-link">
+                        <span id="notificacoesBtn" class="link">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Notificações</span>
+
+                        </span>
+                    </li>
+                    <li  class="nav-link">
+                        <span id="analyticsBtn" class="link">
+                            <i class='bx bx-pie-chart-alt icon'></i>
+                            <span class="text nav-text">analytics</span>
+
+                        </span>
+                    </li>
+
+
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li class="">
+                    <span id="logout" class="link">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Logout</span>
+                    </span>
+                </li>
+
+                <li class="mode">
+                    <div class="moon-sun">
+                        <i class="bx bx-moon icon moon"></i>
+                        <i class="bx bx-sun icon sun"></i>
+                    </div>
+                    <span class="mode-text text">Dark Mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+
+
+            </div>
+        </div>
+
+    </nav>
+
+    <section id="conteudo" class="home">
+
+        <!-- ? Dashboard -->
+        <div id="dashboard" class="dashboard">
+            Dashboard
+            <div class="graficos">
+
+                <div class="grafico graficoPersonagem">
+
+                </div>
+                <div class="grafico graficoArco">
+
+                </div>
+                <div class="grafico graficoVisualizacaoU">
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <!-- ? Dashboard -->
+
+        <!-- ? Notificações -->
+
+        <div id="notificacoes" class="Notificacoes none">
+            Notificações
+        </div>
+        <!-- ? Notificações -->
+        <!-- ? analytics -->
+
+        <div id="analytics" class="analytics none">
+            Analytics
+            <!-- ? analytics -->
+        </div>
+    </section>
+</body>
+
+</html>
+
+<script src="assets/js/dashboard.js"></script>

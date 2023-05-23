@@ -46,11 +46,11 @@ create table usuario (
     constraint fkS foreign key(fksagaF) references saga(idSaga),
     constraint cargos check(
         cargo = 'Padão'
-        or cargo = 'Principal'
+        or cargo = 'Admin'
     )
 );
 
-insert into usuario values(null,'Gabriel Yukio','gabielyukiomibecoca@gmail.com','senha123','Principal','Ambos',default,'padão',503,1000);
+insert into usuario values(null,'Gabriel Yukio','gabielyukiomibecoca@gmail.com','senha123','Admin','Ambos',default,'padão',503,1000);
 
 create table comentario (
     idComentario int primary key auto_increment,
@@ -62,7 +62,6 @@ create table comentario (
     constraint fkA foreign key (fkAutor) references usuario(idUsuario)
 );
 
-drop table comentario;
 
 /* insert into usuario values (null, 'jose','jj','ska','ccc',default); */
 select
@@ -301,7 +300,7 @@ values
             from
                 usuario
             where
-                email = 'cs@'
+                email = 'gabielyukiomibecoca@gmail.com'
         ),
         default
     );
@@ -316,6 +315,7 @@ from comentario join usuario on idUsuario = fkAutor order by idComentario desc;
 
 
 select * from usuario;
+
 select count(meioVisualizacao) as manga, count(meioVisualizacao) as anime, count(meioVisualizacao) as ambos from usuario where meioVisualizacao = 'manga' ;
 
 
