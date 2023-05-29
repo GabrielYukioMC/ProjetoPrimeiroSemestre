@@ -11,6 +11,14 @@ router.get("/totalA", function (req, res) {
     medidaController.buscarTotalMedida(req, res);
 });
 
+router.get("/buscarTotalMedidaPersonagemF", function (req, res) {
+    medidaController.buscarTotalMedidaPersonagemF(req, res);
+});
+
+router.get("/buscarTotalMedidaArcoF", function (req, res) {
+    medidaController.buscarTotalMedidaArcoF(req, res);
+});
+
 router.get("/tempo-real/:idAquario", function (req, res) {
     medidaController.buscarMedidasEmTempoReal(req, res);
 })

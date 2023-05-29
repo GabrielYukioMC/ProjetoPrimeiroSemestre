@@ -214,7 +214,7 @@ function exibirComentario() {
     areaComentarios.innerHTML += ` 
       <div class="FormatoPadao ${tipoComentario}">
         <div class="titulo">
-            <h1>${titulo}</h1> <i class="fa-solid fa-ellipsis-vertical"></i>
+            <h1>${titulo}</h1> <i id="opComentario" class="fa-solid fa-ellipsis-vertical"></i>
             <div class="informacoesPostagem">
                 <h3>Autor: ${autor}</h3>
                 <h3>Acompanha: ${visualisacao}}</h3>
@@ -228,3 +228,4 @@ function exibirComentario() {
         </div>
       </div>`
 }
+

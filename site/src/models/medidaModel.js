@@ -90,8 +90,51 @@ function buscarTotalMedida() {
 }
 
 
+
+
+function buscarTotalMedidaPersonagemF() {
+
+    instrucaoSql = ''
+
+    if (process.env.AMBIENTE_PROCESSO == "producao") {
+        instrucaoSql = `select count(fkPersonagemF), personagem.nome from usuario join personagem on fkPersonagemF = idPersonagem group by fkPersonagemF;`;
+
+    } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+        instrucaoSql = `select count(fkPersonagemF)as qtdP, personagem.nome from usuario join personagem on fkPersonagemF = idPersonagem group by fkPersonagemF; `;
+    } else {
+        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
+        return
+    }
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
+
+function buscarTotalMedidaArcoF() {
+
+    instrucaoSql = ''
+
+    if (process.env.AMBIENTE_PROCESSO == "producao") {
+        instrucaoSql = `select count(fksagaF), saga.nome from usuario join saga on fksagaF = idsaga group by fksagaF;`;
+
+    } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+        instrucaoSql = `select count(fksagaF) as qtdA, saga.nome from usuario join saga on fksagaF = idsaga group by fksagaF;`;
+    } else {
+        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
+        return
+    }
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
 module.exports = {
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal, 
-    buscarTotalMedida
+    buscarTotalMedida,
+    buscarTotalMedidaPersonagemF,
+    buscarTotalMedidaArcoF
 }

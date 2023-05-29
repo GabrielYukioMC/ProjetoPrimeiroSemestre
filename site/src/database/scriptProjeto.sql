@@ -9,16 +9,6 @@ create table saga (
     logoSaga varchar(45)
 ) auto_increment = 1000;
 
-create table arco (
-    idArco int auto_increment primary key,
-    nome varchar(45),
-    descArco varchar(900),
-    logoArco varchar(45),
-    qtdEps int,
-    fkSaga int,
-    constraint fksaga foreign key(fkSaga) references saga(idSaga)
-) auto_increment = 100;
-
 create table personagem (
     idPersonagem int auto_increment primary key,
     nome varchar(45),
@@ -50,8 +40,7 @@ create table usuario (
     )
 );
 
-insert into usuario values(null,'Gabriel Yukio','gabielyukiomibecoca@gmail.com','senha123','Admin','Ambos',default,'padão',503,1000);
-
+insert into usuario values(null,'Gabriel Yukio','gabrielyukiomibecoca@gmail.com','senha123','Admin','Ambos',default,'padão',503,1000);
 create table comentario (
     idComentario int primary key auto_increment,
     tituloComentario varchar(20),
@@ -324,3 +313,10 @@ select
 (select count(meioVisualizacao) from usuario where meioVisualizacao = 'manga') as manga,
 (select count(meioVisualizacao) from usuario where meioVisualizacao = 'ambos')as ambos,
 (select count(meioVisualizacao) from usuario)as total;
+
+select * from usuario;
+use projeto;
+select usuario.idUsuario as idUsuario, usuario.nome as nome, personagem.nome as personagem, saga.nome as saga from personagem join usuario on idPersonagem = fkPersonagemF join saga on idSaga = fksagaF;
+
+
+select count(fkPersonagemF), personagem.nome from usuario join personagem on fkPersonagemF = idPersonagem group by fkPersonagemF; 
