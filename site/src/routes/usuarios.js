@@ -32,4 +32,8 @@ router.post("/listarPerArc", function (req, res) {
     usuarioController.listarPerArc(req, res);
 });
 
+router.delete("/deletar",function(req,res){
+    usuarioController.deletar(req,res);
+})
+
 module.exports = router;

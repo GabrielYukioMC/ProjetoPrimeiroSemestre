@@ -22,7 +22,7 @@ var mySqlConfig = {
     host: "localhost",
     database: "projeto",
     user: "root",
-    password: "12345", // senha fake pra enviar pro github (~_~)
+    password: "12345", // ^^ (~_~)
 };
 
 function executar(instrucao) {

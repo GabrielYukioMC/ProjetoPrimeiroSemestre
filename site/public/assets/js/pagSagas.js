@@ -22,7 +22,6 @@ fetch("/sagas/listar").then(function (resposta) {
               
                       <h1>${publicacao.nome}</h1>
                        <p>${publicacao.descricaoSaga}</p>
-                       <a href="${publicacao.nome}.html">Ver Mais...</a>
                    
                      </div>
                      

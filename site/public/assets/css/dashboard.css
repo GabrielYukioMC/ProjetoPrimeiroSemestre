@@ -27,6 +27,7 @@ body {
     height: 100vh;
     background: var(--body-color);
     transition: var(--tran-04);
+    overflow: hidden;
 }
 
 body.dark {
@@ -319,7 +320,6 @@ body.dark .switch::before {
 .dashboard .graficos .grafico {
     width: 30%;
     height: 300px;
-    background: var(--primary-color-light);
 }
 
 .dashboard .inferior {
@@ -422,12 +422,6 @@ body.dark .switch::before {
     width: 100%;
 }
 
-
-
-
-
-
-
 .usuarios::-webkit-scrollbar {
     width: 18px;
 }
@@ -444,10 +438,10 @@ body.dark .switch::before {
 
 .dashboard .inferior .usuarios {
 
-        overflow-y: scroll;
-        scrollbar-width: thin;
-        scrollbar-color: var(--sidebar-color) var(--primary-color-light);
-    
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: var(--sidebar-color) var(--primary-color-light);
+
     width: 65%;
     height: 300px;
     background: var(--primary-color-light);
@@ -511,7 +505,7 @@ body.dark .switch::before {
 
 }
 
-.informacoes_usuario::before{
+.informacoes_usuario::before {
     content: "";
     position: absolute;
     width: 90%;
@@ -531,9 +525,16 @@ body.dark .switch::before {
     list-style: none;
 }
 
-.informacoes_usuario .botoes i{
+.informacoes_usuario .botoes button i {
     cursor: pointer;
+    font-size: 20px;
+    color: var(--text-color);
+}
 
+.informacoes_usuario .botoes button {
+    border: none;
+    background: none;
+    outline: none;
 }
 
 
@@ -543,10 +544,81 @@ body.dark .switch::before {
     display: none;
 }
 
-.graficos .grafico .caixa_grafico{
+.graficos .grafico .caixa_grafico {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 96%;
+    height: 96%;
+    width: 100%;
+    background: var(--primary-color-light);
+}
+
+.grafico h6{
+    text-align: center;
+    margin-bottom: 1%;
+}
+
+
+
+.divAlerta {
+    width: 100vw;
+    position: relative;
+
+}
+
+.campoAlert {
+    position: absolute;
+    right: 0%;
+    top: -15px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px 0 0 4px;
+    padding: 1%;
+    font-size: 20px;
+    overflow: hidden;
+    margin-top: 2%;
+    animation: CampoAlert 1s ease forwards;
+}
+
+.Delete{
+    background: #9ef0ff;
+    border-left: 8px solid #0175bd;
+    color: #0175bd;
+}
+
+.Delete p{
+    margin-left: 1%;
+}
+
+
+.none {
+    display: none;
+}
+
+
+@keyframes CampoAlert {
+    0% {
+        transform: translateX(100%);
+    }
+
+
+    25% {
+
+        transform: translateX(-10%);
+
+    }
+
+    75% {
+
+        transform: translateX(0%);
+
+    }
+
+    100% {
+
+        transform: translateX(-10px);
+
+    }
+
 }

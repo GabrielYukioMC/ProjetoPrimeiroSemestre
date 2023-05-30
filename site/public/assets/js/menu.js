@@ -1,3 +1,6 @@
+
+
+
 console.log(sessionStorage.ID_USUARIO)
 var link1 = 'usuario.html'
 var link2 = 'dashboard.html'

@@ -40,7 +40,38 @@ create table usuario (
     )
 );
 
-insert into usuario values(null,'Gabriel Yukio','gabrielyukiomibecoca@gmail.com','senha123','Admin','Ambos',default,'padão',503,1000);
+insert into
+    usuario
+values
+    (
+        null,
+        'Gabriel Yukio',
+        'gabrielyukiomibecoca@gmail.com',
+        'senha123',
+        'Admin',
+        'Ambos',
+        default,
+        'padão',
+        503,
+        1000
+    );
+
+insert into
+    usuario
+values
+    (
+        null,
+        'mm',
+        'mm@',
+        'mm',
+        'padão',
+        'Ambos',
+        default,
+        'padão',
+        506,
+        1002
+    );
+
 create table comentario (
     idComentario int primary key auto_increment,
     tituloComentario varchar(20),
@@ -49,8 +80,8 @@ create table comentario (
     fkAutor int,
     dtPublicacao datetime default current_timestamp,
     constraint fkA foreign key (fkAutor) references usuario(idUsuario)
+    ON DELETE CASCADE
 );
-
 
 /* insert into usuario values (null, 'jose','jj','ska','ccc',default); */
 select
@@ -292,7 +323,21 @@ values
                 email = 'gabielyukiomibecoca@gmail.com'
         ),
         default
+    )  ,  (
+        'Lili?',
+        'imu-sama pode ser a rainha lili  de alabasta ou outra pessoa do seculo perdido.',
+        'teoria',
+        (
+            select
+                idUsuario
+            from
+                usuario
+            where
+                email = 'gabielyukiomibecoca@gmail.com'
+        ),
+        default
     );
+
 select
     comentario.idComentario,
     comentario.tituloComentario,
@@ -300,23 +345,86 @@ select
     comentario.tipoComentario,
     usuario.nome,
     usuario.meioVisualizacao
-from comentario join usuario on idUsuario = fkAutor order by idComentario desc;
+from
+    comentario
+    join usuario on idUsuario = fkAutor
+order by
+    idComentario desc;
 
+select
+    *
+from
+    usuario;
 
-select * from usuario;
+select
+    count(meioVisualizacao) as manga,
+    count(meioVisualizacao) as anime,
+    count(meioVisualizacao) as ambos
+from
+    usuario
+where
+    meioVisualizacao = 'manga';
 
-select count(meioVisualizacao) as manga, count(meioVisualizacao) as anime, count(meioVisualizacao) as ambos from usuario where meioVisualizacao = 'manga' ;
+select
+    (
+        select
+            count(meioVisualizacao)
+        from
+            usuario
+        where
+            meioVisualizacao = 'anime'
+    ) as anime,
+    (
+        select
+            count(meioVisualizacao)
+        from
+            usuario
+        where
+            meioVisualizacao = 'manga'
+    ) as manga,
+    (
+        select
+            count(meioVisualizacao)
+        from
+            usuario
+        where
+            meioVisualizacao = 'ambos'
+    ) as ambos,
+    (
+        select
+            count(meioVisualizacao)
+        from
+            usuario
+    ) as total;
 
+select
+    *
+from
+    usuario;
 
-select  
-(select count(meioVisualizacao) from usuario where meioVisualizacao = 'anime') as anime , 
-(select count(meioVisualizacao) from usuario where meioVisualizacao = 'manga') as manga,
-(select count(meioVisualizacao) from usuario where meioVisualizacao = 'ambos')as ambos,
-(select count(meioVisualizacao) from usuario)as total;
-
-select * from usuario;
 use projeto;
-select usuario.idUsuario as idUsuario, usuario.nome as nome, personagem.nome as personagem, saga.nome as saga from personagem join usuario on idPersonagem = fkPersonagemF join saga on idSaga = fksagaF;
 
+select
+    usuario.idUsuario as idUsuario,
+    usuario.nome as nome,
+    personagem.nome as personagem,
+    saga.nome as saga
+from
+    personagem
+    join usuario on idPersonagem = fkPersonagemF
+    join saga on idSaga = fksagaF;
 
-select count(fkPersonagemF), personagem.nome from usuario join personagem on fkPersonagemF = idPersonagem group by fkPersonagemF; 
+select
+    count(fkPersonagemF),
+    personagem.nome
+from
+    usuario
+    join personagem on fkPersonagemF = idPersonagem
+group by
+    fkPersonagemF;
+
+DELETE FROM
+    usuario
+WHERE
+    idUsuario = 4;
+
