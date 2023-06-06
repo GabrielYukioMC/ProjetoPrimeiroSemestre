@@ -33,6 +33,15 @@ app.use("/personagens", personagensRouter);
 app.use("/comentarios", comentarioRouter);
 
 
+// app.use((req, res,next)=>{
+//     res.status(404).render('index')
+// })
+
+app.use('*',(_,res)=>{
+    // res.sendFile(__dirname+'/index.js')
+    res.sendfile('./public/404.html');
+})
+
 
 app.listen(PORTA, function () {
     console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA} \n

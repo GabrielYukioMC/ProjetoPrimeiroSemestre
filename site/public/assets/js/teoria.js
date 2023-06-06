@@ -169,11 +169,19 @@ fetch("/comentarios/listar").then(function (resposta) {
                 areaComentarios.innerHTML += ` 
                 <div class="FormatoPadao ${publicacao.tipoComentario}">
                   <div class="titulo">
-                      <h1>${publicacao.tituloComentario}</h1> <i class="fa-solid fa-ellipsis-vertical"></i>
+                      <h1>${publicacao.tituloComentario}</h1> <i onclick="mostarOpcoes(${publicacao.idComentario})" class="fa-solid fa-ellipsis-vertical tresPontinhos"> </i>
+                      <div class="opcoes">
+                             <div id="opcao${publicacao.idComentario}" class="CaixaOpcoes none">
+                             <i onclick="sairOpcao(${publicacao.idComentario})" class="fa-solid fa-xmark"></i>
+                             <div class="botoesOpcoes">
+                             <span>notificar<span>
+                             </div>
+                             </div>
+                      </div>
+                     
                       <div class="informacoesPostagem">
                           <h3>Autor: ${publicacao.nome}</h3>
                           <h3>${publicacao.tipoComentario} sobre ${MeioV}</h3>
-                          
                       </div>
                   </div>
                   <div class="conteudo">
@@ -203,29 +211,19 @@ fetch("/comentarios/listar").then(function (resposta) {
 
 
 
-
-
-
-
-
-
-
-function exibirComentario() {
-    areaComentarios.innerHTML += ` 
-      <div class="FormatoPadao ${tipoComentario}">
-        <div class="titulo">
-            <h1>${titulo}</h1> <i id="opComentario" class="fa-solid fa-ellipsis-vertical"></i>
-            <div class="informacoesPostagem">
-                <h3>Autor: ${autor}</h3>
-                <h3>Acompanha: ${visualisacao}}</h3>
-                <h3> ${data}</h3>
-            </div>
-        </div>
-        <div class="conteudo">
-            <p>
-                ${comentario}
-            </p>
-        </div>
-      </div>`
+function mostarOpcoes(id) {
+    var opcao = document.getElementById(`opcao${id}`);
+    opcao.classList.remove('none')
 }
+
+
+function sairOpcao(id) {
+    var opcao = document.getElementById(`opcao${id}`);
+    opcao.classList.add('none')
+}
+
+
+
+
+
 

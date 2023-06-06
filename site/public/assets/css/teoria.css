@@ -50,7 +50,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background:  #d0d0ff;
+    background: #d0d0ff;
 
 }
 
@@ -84,7 +84,7 @@ main {
     content: "";
     position: absolute;
     left: 44%;
-    top: 55%;
+    top: 50%;
     border-radius: 50%;
     width: 90px;
     height: 90px;
@@ -105,7 +105,9 @@ main {
     top: 10px;
     right: 20px;
 }
-
+.tresPontinhos{
+    cursor: pointer;
+}
 
 .FormatoPadao .titulo .informacoesPostagem {
     display: flex;
@@ -285,7 +287,7 @@ main {
     border: 2px solid var(--corPrimaria);
     position: fixed;
     z-index: 5;
-top: 10%;
+    top: 10%;
     color: var(--corClara);
     animation: movimentoModal;
     animation-duration: 1s;
@@ -566,6 +568,31 @@ top: 10%;
 
 
 }
+
+
+.opcoes {
+    position: relative;
+}
+
+.opcoes .CaixaOpcoes {
+    position: absolute;
+    top: -50px;
+    right: -250px;
+    width: 210px;
+    height: 180px;
+    background: #fe7979;
+}
+
+
+
+.opcoes .botoesOpcoes {
+    background: #000;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
 
