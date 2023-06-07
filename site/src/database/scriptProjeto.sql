@@ -83,6 +83,17 @@ create table comentario (
     ON DELETE CASCADE
 );
 
+create table aviso(
+    idAviso int primary key auto_increment,
+    fkComentario int ,
+    dataAviso datetime default current_timestamp,
+    constraint fkC foreign key (fkComentario) references comentario(idComentario)
+);
+insert  into aviso (fkComentario, dataAviso) values ( 2 ,default);
+
+
+
+
 /* insert into usuario values (null, 'jose','jj','ska','ccc',default); */
 select
     *
@@ -427,4 +438,5 @@ DELETE FROM
     usuario
 WHERE
     idUsuario = 4;
+
 

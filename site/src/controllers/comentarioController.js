@@ -33,7 +33,7 @@ function entrar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
-        
+
         comentarioModel.entrar(email, senha)
             .then(
                 function (resultado) {
@@ -63,9 +63,9 @@ function entrar(req, res) {
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var tituloComentario = req.body.tituloServer;
-    var conteudoComentario= req.body.conteudoServer;
-    var tipoComentario= req.body.tipoServer;
-    var emailUsuario= req.body.emailServer;
+    var conteudoComentario = req.body.conteudoServer;
+    var tipoComentario = req.body.tipoServer;
+    var emailUsuario = req.body.emailServer;
 
     // Faça as validações dos valores
     if (tituloComentario == undefined) {
@@ -74,12 +74,12 @@ function cadastrar(req, res) {
         res.status(400).send("Seu conteudoComentario está undefined!");
     } else if (tipoComentario == undefined) {
         res.status(400).send("Sua tipoComentario está undefined!");
-    }else if (emailUsuario == undefined) {
+    } else if (emailUsuario == undefined) {
         res.status(400).send("Sua emailUsuario está undefined!");
     } else {
-        
+
         // Passe os valores como parâmetro e vá para o arquivo comentarioModel.js
-        comentarioModel.cadastrar(tituloComentario,conteudoComentario,tipoComentario,emailUsuario)
+        comentarioModel.cadastrar(tituloComentario, conteudoComentario, tipoComentario, emailUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -113,7 +113,7 @@ function update(req, res) {
     } else if (campo == undefined) {
         res.status(400).send("Seu campo está undefined!");
     } else {
-        
+
         // Passe os valores como parâmetro e vá para o arquivo comentarioModel.js
         comentarioModel.update(resposta, id, campo)
             .then(
@@ -136,47 +136,51 @@ function update(req, res) {
 
 
 
-function updatePerArc(req, res) {
-    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var resposta = req.body.respostaServer;
-    var id = req.body.idServer;
-    var campo = req.body.campoServer;
+function verificarAviso(req, res) {
 
-    // Faça as validações dos valores
-    if (resposta == undefined) {
-        res.status(400).send("Sua resposta está undefined!");
-    } else if (id == undefined) {
+    var id = req.body.idServer;
+
+    if (id == undefined) {
         res.status(400).send("Seu id está undefined!");
-    } else if (campo == undefined) {
-        res.status(400).send("Seu campo está undefined!");
     } else {
-        
-        // Passe os valores como parâmetro e vá para o arquivo comentarioModel.js
-        comentarioModel.updatePerArc(resposta, id, campo)
+
+        comentarioModel.verificarAviso(id)
             .then(
                 function (resultado) {
-                    res.json(resultado);
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    if (resultado.length == 1) {
+                        console.log(resultado);
+                            console.log("Aviso já cadastrado !");
+                            console.log(resultado.length);
+                        res.json(resultado[0]);
+                    } else if (resultado.length == 0) {
+                        console.log("comentario sem aviso");
+                        console.log("cadastrando aviso...");
+
+                        comentarioModel.criarAviso(id).then(function () {
+                            // AQUI DENTRO QUER DIZER QUE CRIOU O AVISO !!!
+                            res.status(200).send("Aviso cadastrado")
+                            console.log("Aviso cadastrado !");
+                        })
+                    } else {
+                        res.status(403).send(" comentario com mais de um aviso !!");
+                    }
                 }
             ).catch(
                 function (erro) {
                     console.log(erro);
-                    console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
-                        erro.sqlMessage
-                    );
+                    console.log("\nHouve um erro ao buscar os avisos: ", erro.sqlMessage);
                     res.status(500).json(erro.sqlMessage);
                 }
             );
     }
+
 }
 
-
-
-
-function listarPerArc(req, res) {
-    var id = req.body.idUsuarioServer;
-
-    comentarioModel.listarPerArc(id)
+function listarAvisos(req, res) {
+    comentarioModel.listarAvisos()
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -192,13 +196,12 @@ function listarPerArc(req, res) {
         );
 }
 
-
 module.exports = {
     entrar,
     cadastrar,
     listar,
     testar,
     update,
-    updatePerArc,
-    listarPerArc
+    verificarAviso,
+    listarAvisos
 }

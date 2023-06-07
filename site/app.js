@@ -37,10 +37,10 @@ app.use("/comentarios", comentarioRouter);
 //     res.status(404).render('index')
 // })
 
-app.use('*',(_,res)=>{
-    // res.sendFile(__dirname+'/index.js')
-    res.sendfile('./public/404.html');
-})
+// app.use('*',(_,res)=>{
+//     // res.sendFile(__dirname+'/index.js')
+//     res.sendfile('./public/404.html');
+// })
 
 
 app.listen(PORTA, function () {

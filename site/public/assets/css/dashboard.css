@@ -381,6 +381,14 @@ body.dark .switch::before {
     color: var(--color-border-alert);
     align-items: center;
 }
+.caixaAlertas{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+
+}
 
 .topoAlertas {
     display: flex;

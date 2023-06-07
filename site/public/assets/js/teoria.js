@@ -144,69 +144,72 @@ function CadastrarComentario() {
 
 
 }
+listarComentario();
+function listarComentario() {
+    fetch("/comentarios/listar").then(function (resposta) {
+        if (resposta.ok) {
+            if (resposta.status == 204) {
 
-
-
-fetch("/comentarios/listar").then(function (resposta) {
-    if (resposta.ok) {
-        if (resposta.status == 204) {
-
-            throw "Nenhum personagem encontrado!!";
-        }
-
-        resposta.json().then(function (resposta) {
-            console.log("Dados recebidos: ", JSON.stringify(resposta));
-
-
-            for (let i = 0; i < resposta.length; i++) {
-                var publicacao = resposta[i];
-                var MeioV;
-                if (publicacao.meioVisualizacao == "Ambos") {
-                    MeioV = "Anime/Manga"
-                } else {
-                    MeioV = publicacao.meioVisualizacao;
-                }
-                areaComentarios.innerHTML += ` 
-                <div class="FormatoPadao ${publicacao.tipoComentario}">
-                  <div class="titulo">
-                      <h1>${publicacao.tituloComentario}</h1> <i onclick="mostarOpcoes(${publicacao.idComentario})" class="fa-solid fa-ellipsis-vertical tresPontinhos"> </i>
-                      <div class="opcoes">
-                             <div id="opcao${publicacao.idComentario}" class="CaixaOpcoes none">
-                             <i onclick="sairOpcao(${publicacao.idComentario})" class="fa-solid fa-xmark"></i>
-                             <div class="botoesOpcoes">
-                             <span>notificar<span>
-                             </div>
-                             </div>
-                      </div>
-                     
-                      <div class="informacoesPostagem">
-                          <h3>Autor: ${publicacao.nome}</h3>
-                          <h3>${publicacao.tipoComentario} sobre ${MeioV}</h3>
-                      </div>
-                  </div>
-                  <div class="conteudo">
-                      <p>
-                          ${publicacao.conteudo}
-                      </p>
-                  </div>
-                </div>`
+                throw "Nenhum personagem encontrado!!";
             }
 
-        });
-    } else {
+            resposta.json().then(function (resposta) {
+                console.log("Dados recebidos: ", JSON.stringify(resposta));
 
 
-        console.log("Houve um erro na busca dos personagens");
+                for (let i = 0; i < resposta.length; i++) {
+                    var publicacao = resposta[i];
+                    var MeioV;
+                    if (publicacao.meioVisualizacao == "Ambos") {
+                        MeioV = "Anime/Manga"
+                    } else {
+                        MeioV = publicacao.meioVisualizacao;
+                    }
+                    areaComentarios.innerHTML += ` 
+                    <div class="FormatoPadao ${publicacao.tipoComentario}">
+                      <div class="titulo">
+                          <h1>${publicacao.tituloComentario}</h1> <i onclick="mostarOpcoes(${publicacao.idComentario})" class="fa-solid fa-ellipsis-vertical tresPontinhos"> </i>
+                          <div class="opcoes">
+                          <div id="opcao${publicacao.idComentario}" class="CaixaOpcoes ${publicacao.tipoComentario} none">
+                              <i onclick="sairOpcao(${publicacao.idComentario})" class="fa-solid fa-xmark"></i>
+                              <div class="botoesOpcoes">
+                              <span onclick="notificar(${publicacao.idComentario})">notificar</span>
+                              </div>
+                          </div>
+                        </div>
+                         
+                          <div class="informacoesPostagem">
+                              <h3>Autor: ${publicacao.nome}</h3>
+                              <h3>${publicacao.tipoComentario} sobre ${MeioV}</h3>
+                          </div>
+                      </div>
+                      <div class="conteudo">
+                          <p>
+                              ${publicacao.conteudo}
+                          </p>
+                      </div>
+                    </div>`
+                }
 
-        resposta.text().then(texto => {
-            console.error(texto);
+            });
+        } else {
 
-        });
-    }
 
-}).catch(function (erro) {
-    console.log(erro);
-})
+            console.log("Houve um erro na busca dos personagens");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+
+            });
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+    return false;
+}
+
+
 
 
 
@@ -223,7 +226,46 @@ function sairOpcao(id) {
 }
 
 
+function notificar(id) {
+    var idVar = id;
+
+    fetch("/comentarios/verificarAviso", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            idServer: idVar,
+
+        })
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!")
+
+        if (resposta.ok) {
+            console.log(resposta);
+
+            resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
+
+                console.log("comentario com aviso");
+
+            });
+
+        } else {
 
 
 
+            resposta.text().then(texto => {
+                console.error(texto);
 
+            });
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+    return false;
+}

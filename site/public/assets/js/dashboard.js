@@ -2,6 +2,13 @@ if (sessionStorage.CARGO_USUARIO != 'Admin') {
     window.location = "index.html";
 }
 
+
+exibirAvisos()
+obterDadosDeVisualizacaoGrafico();
+obterDadosGraficoArcos();
+obterDadosGraficoPersonagem();
+listarUsuario()
+
 nameUsuarioPrincipal.innerHTML = sessionStorage.NOME_USUARIO
 cargoUsuarioPrincipal.innerHTML = sessionStorage.CARGO_USUARIO
 
@@ -74,8 +81,6 @@ logout.addEventListener('click', () => {
 })
 
 
-listarUsuario()
-
 function listarUsuario() {
     caixa_usuario.innerHTML = ``
     fetch("/usuarios/listar").then(function (resposta) {
@@ -111,7 +116,7 @@ function listarUsuario() {
                         <h6>${infUsuario.saga}</h6>
                     </li>
                     <li class="botoes">
-                       <button onclick="apagar(${infUsuario.idUsuario})"> <i  id="apagar${infUsuario.idUsuario}" class='bx bxs-trash'></i></button>
+                       <button onclick="deletarU(${infUsuario.idUsuario})"> <i  id="deletarU${infUsuario.idUsuario}" class='bx bxs-trash'></i></button>
                     </li>
                 </ul>`
 
@@ -140,7 +145,6 @@ function listarUsuario() {
 }
 
 
-obterDadosGraficoPersonagem();
 function obterDadosGraficoPersonagem() {
 
     fetch(`/medidas/buscarTotalMedidaPersonagemF`, { cache: 'no-store' }).then(function (response) {
@@ -231,8 +235,6 @@ function plotarGraficoP(resposta) {
 
 
 
-
-obterDadosGraficoArcos();
 function obterDadosGraficoArcos() {
 
     fetch(`/medidas/buscarTotalMedidaArcoF`, { cache: 'no-store' }).then(function (response) {
@@ -324,9 +326,6 @@ function plotarGraficoA(resposta) {
 
 
 
-
-
-obterDadosDeVisualizacaoGrafico();
 function obterDadosDeVisualizacaoGrafico() {
 
 
@@ -370,7 +369,7 @@ function plotarGraficoV(resposta) {
                 '#da0a07',
                 '#0cd234',
                 '#d7b90c',
-                
+
             ],
             tension: 0.1
         }]
@@ -418,9 +417,63 @@ function plotarGraficoV(resposta) {
 
 }
 
+function exibirAvisos() {
 
+    caixa_Avisos.innerHTML = ``;
+
+ fetch("/comentarios/listarA").then(function (resposta) {
+        if (resposta.ok) {
+            if (resposta.status == 204) {
+
+                throw "Nenhum aviso encontrado!!";
+            }
+
+            resposta.json().then(function (resposta) {
+                console.log("Dados recebidos: ", JSON.stringify(resposta[[0]]));
+                for (let cont = 0; cont < resposta.length; cont++) {
+                    qtdAlert.innerHTML = cont + 1
+                }
+
+                for (let i = 0; i < resposta.length; i++) {
+                    var infAviso = resposta[i];
+                    caixa_Avisos.innerHTML += `<div class="alerta">
+                        <div class="iconeAlerta"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <div class="conteudoAlert">
+                            <h3 class="comentarioP">comentario ${infAviso.fkC} em alerta</h3>
+                        </div>
+                    </div>`
+
+
+
+                }
+
+            });
+
+
+        } else {
+
+
+            console.log("Houve um erro na busca dos avisos");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+
+            });
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+
+}
+
+
+
+
+function deletarU(num) {
 var CampoDeleteAlert = document.getElementById('CampoDeleteAlert')
-function apagar(num) {
+
     var id = num
     fetch("/usuarios/deletar", {
         method: "DELETE",

@@ -25,9 +25,13 @@ function entrar(email, senha) {
     return database.executar(instrucao);
 }
 
+
+
+
+
 // Coloque os mesmos parâmetros aqui. Vá para a var instrucao
-function cadastrar(tituloComentario,conteudoComentario,tipoComentario,emailUsuario) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():",tituloComentario,conteudoComentario,tipoComentario,emailUsuario);
+function cadastrar(tituloComentario, conteudoComentario, tipoComentario, emailUsuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", tituloComentario, conteudoComentario, tipoComentario, emailUsuario);
 
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
@@ -50,7 +54,32 @@ function update(resposta, id, campo) {
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
+function verificarAviso(id) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", id)
+    var instrucao = `
+        SELECT * FROM aviso WHERE fkComentario = ${id};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
 
+function criarAviso(id) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", id)
+    var instrucao = `
+       insert into aviso (fkComentario,dataAviso) values (${id},default);
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function listarAvisos() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+    SELECT fkComentario as fkC FROM aviso;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
 
 
 
@@ -59,5 +88,8 @@ module.exports = {
     entrar,
     cadastrar,
     listar,
-    update
+    update,
+    verificarAviso,
+    criarAviso,
+    listarAvisos
 };
