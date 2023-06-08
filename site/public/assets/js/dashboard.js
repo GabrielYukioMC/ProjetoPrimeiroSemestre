@@ -2,12 +2,16 @@ if (sessionStorage.CARGO_USUARIO != 'Admin') {
     window.location = "index.html";
 }
 
+// ^ <=------------------ plotar dados na tela ------------------=> ^
 
-exibirAvisos()
+exibirAvisos();
 obterDadosDeVisualizacaoGrafico();
 obterDadosGraficoArcos();
 obterDadosGraficoPersonagem();
-listarUsuario()
+listarUsuario();
+
+// ^ <=------------------ plotar dados na tela ------------------=> ^
+
 
 nameUsuarioPrincipal.innerHTML = sessionStorage.NOME_USUARIO
 cargoUsuarioPrincipal.innerHTML = sessionStorage.CARGO_USUARIO

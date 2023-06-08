@@ -36,4 +36,9 @@ router.delete("/deletar",function(req,res){
     usuarioController.deletar(req,res);
 })
 
+
+router.post("/listarAvisos",function(req,res){
+    usuarioController.listarAvisos(req,res);
+})
+
 module.exports = router;

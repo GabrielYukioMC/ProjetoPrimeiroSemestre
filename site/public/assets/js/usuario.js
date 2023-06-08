@@ -319,3 +319,70 @@ function updatePersonagemArco(resposta2, campo) {
 function enviarPaginaTeoria() {
     window.location = "PagTeoria.html"
 }
+
+listarAvisos();
+function listarAvisos() {
+    fetch("/usuarios/listarAvisos", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            idServer: id,
+        })
+    }).then(function (resposta) {
+        if (resposta.ok) {
+            CaixaAvisoAlertas.innerHTML += `<h1>Caixa de avisos</h1>`
+            if (resposta.status == 200) {
+
+
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+
+                    for (let i = 0; i < resposta.length; i++) {
+                        var aviso = resposta[i];
+                        CaixaAvisoAlertas.innerHTML += `
+                        
+                        <div class="alerta">
+                    <div class="iconeAlerta"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <div class="conteudoAlert">
+                        <h3 class="comentarioP">Você tem um comentario em alerta !!</h3>
+                        <h4 class="comentarioP">Verifique o seu comentario com o titulo: "${aviso.titulo}" </h4>
+                    </div>
+                </div>
+                        `
+
+                    }
+
+                });
+
+            }else{
+                CaixaAvisoAlertas.innerHTML = `
+                        
+                        <div class="alerta">
+                    <div class="iconeAlerta"><i class="fa-solid fa-face-smile"></i></div>
+                    <div class="conteudoAlert">
+                        <h3 class="comentarioP">Você não possui avisos !!</h3>
+                    </div>
+                </div>
+                        `
+            }
+
+        } else {
+
+
+            console.log("Houve um erro na busca das sagas");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+
+            });
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+    return false;
+}

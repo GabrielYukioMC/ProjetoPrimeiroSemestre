@@ -28,23 +28,36 @@ var modeloComentario = 'comentario'
 tipoTema.innerHTML = `Tema: ${modeloComentario}`
 
 
+var SpanSpoiler = document.getElementById('SpanSpoiler');
+var SpanTeoria = document.getElementById('SpanTeoria');
 var SpanComentario = document.getElementById('SpanComentario');
+
 SpanComentario.addEventListener('click', () => {
     modeloComentario = 'comentario'
+
+    SpanComentario.classList.add('activeC')
+    SpanTeoria.classList.remove('activeT')
+    SpanSpoiler.classList.remove('activeS')
     tipoTema.innerHTML = `Tema: ${modeloComentario}`
 
 })
 
-var SpanTeoria = document.getElementById('SpanTeoria');
 SpanTeoria.addEventListener('click', () => {
     modeloComentario = 'teoria'
+
+    SpanComentario.classList.remove('activeC')
+    SpanTeoria.classList.add('activeT')
+    SpanSpoiler.classList.remove('activeS')
     tipoTema.innerHTML = `Tema: ${modeloComentario}`
 
 })
 
-var SpanSpoiler = document.getElementById('SpanSpoiler');
 SpanSpoiler.addEventListener('click', () => {
     modeloComentario = 'spoiler'
+
+    SpanComentario.classList.remove('activeC')
+    SpanTeoria.classList.remove('activeT')
+    SpanSpoiler.classList.add('activeS')
     tipoTema.innerHTML = `Tema: ${modeloComentario}`
 
 })

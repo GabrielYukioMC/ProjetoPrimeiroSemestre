@@ -438,5 +438,14 @@ DELETE FROM
     usuario
 WHERE
     idUsuario = 4;
+    
+    
+use projeto;
+    
+    
+select * from aviso ;
+
+select tituloComentario from aviso join comentario on fkComentario = idComentario where fkAutor = 2;
+
 
 

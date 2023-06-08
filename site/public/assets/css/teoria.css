@@ -490,6 +490,23 @@ main {
     border: 5px solid var(--CorTituloTeoria);
 }
 
+.activeS {
+    outline: 3px solid var(--CorConteudoSpoiler);
+    border: 5px solid var(--CorTituloSpoiler);
+
+}
+
+.activeC {
+    outline: 3px solid var(--CorConteudoComentario);
+    border: 5px solid var(--CorTituloComentario);
+}
+
+
+.activeT {
+    outline: 3px solid var(--CorConteudoTeoria);
+    border: 5px solid var(--CorTituloTeoria);
+}
+
 /* ^^^^ */
 
 .caixaBotao {

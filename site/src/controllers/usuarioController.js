@@ -218,6 +218,25 @@ function deletar(req, res) {
     }
 }
 
+
+function listarAvisos(req, res) {
+    var id = req.body.idServer;
+    usuarioModel.listarAvisos(id)
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Usuario sem avisos :D")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 module.exports = {
     entrar,
     cadastrar,
@@ -226,5 +245,6 @@ module.exports = {
     update,
     updatePerArc,
     listarPerArc,
-    deletar
+    deletar,
+    listarAvisos
 }

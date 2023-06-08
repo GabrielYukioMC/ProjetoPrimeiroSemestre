@@ -96,7 +96,9 @@ background: linear-gradient(153deg, rgba(255,255,255,1) 11%, rgba(164,159,255,1)
 .principal {
     width: 80%;
     height: 93.2vh;
-
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 #exibirAlertFormulario {
@@ -313,4 +315,31 @@ background: linear-gradient(153deg, rgba(255,255,255,1) 11%, rgba(164,159,255,1)
     width: 190px;
     height: 45px;
     transition: 0.6s;
+}
+
+.CaixaAvisoAlertas{
+    height: 400px;
+    display: flex;
+    width: 90%;
+    margin-top: 2%;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.alerta {
+    cursor: pointer;
+    display: flex;
+    margin: 1%;
+    margin-bottom: 2%;
+    width: 95%;
+    padding: 1%;
+    background: #161045;
+    border: 3px solid #000;
+    color: #fff;
+    align-items: center;
+}
+
+.alerta .conteudoAlert{
+    margin-left: 2%;
 }
