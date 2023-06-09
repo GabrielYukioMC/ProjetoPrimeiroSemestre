@@ -21,7 +21,7 @@ html {
     --color_border: #360000;
 
     --corPrimaria: #161045;
-    --corSegundaria: #6954f4;
+    --corSegundaria: #140477;
     --corterciaria: #2211a0;
 
 
@@ -210,6 +210,7 @@ body {
     background: none;
     color: var(--corSegundaria);
     font-size: 20px;
+    font-weight: 600;
     border-bottom: 3px solid var(--corPrimaria);
 }
 

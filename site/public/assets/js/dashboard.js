@@ -84,6 +84,11 @@ logout.addEventListener('click', () => {
     window.location = "index.html";
 })
 
+var navigation = document.getElementById('navigation')
+navigation.addEventListener('click', () => {
+    window.location = "index.html";
+})
+
 
 function listarUsuario() {
     caixa_usuario.innerHTML = ``
