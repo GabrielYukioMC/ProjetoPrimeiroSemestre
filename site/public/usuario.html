@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="assets/css/menu.css">
     <link rel="stylesheet" href="assets/css/usuario.css">
 
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -53,7 +56,10 @@
                 <p>Nivel do usuario <br> <span id="cargoSpan"></span></p>
                 <p>Personagem favorito <br><span id="personagemSpan"></span></p>
                 <p>Arco favorito <br><span id="arcoSpan"></span></p>
-                <p>Preferencia de visualização <br><span id="visualizacaoSpan"></span></p><br>
+                <p>Preferencia de visualização <br><span id="visualizacaoSpan"></span></p>
+                <div class="sair" onclick="deslogar()">Logout
+                    <span><i class='bx bx-log-out icon '></i></span>
+                </div>
             </div>
         </section>
 
@@ -143,8 +149,8 @@
 
 
             <div id="CaixaAvisoAlertas" class="CaixaAvisoAlertas">
-                
-                
+
+
             </div>
         </section>
     </div>

@@ -7,6 +7,12 @@ var fkPersonagem = sessionStorage.PersonagemF_USUARIO;
 var fkArco = sessionStorage.ARCOF_USUARIO;;
 var id = sessionStorage.ID_USUARIO;
 
+
+function deslogar() {
+    sessionStorage.clear();
+    window.location = "index.html";
+}
+
 if (sessionStorage.FKPERSONAGEM_USUARIO == 'null' && (fkArco != 'null' && fkPersonagem != 'null')) {
 
 
@@ -348,8 +354,8 @@ function listarAvisos() {
                         <div class="alerta">
                     <div class="iconeAlerta"><i class="fa-solid fa-triangle-exclamation"></i></div>
                     <div class="conteudoAlert">
-                        <h3 class="comentarioP">Você tem um comentario em alerta !!</h3>
-                        <h4 class="comentarioP">Verifique o seu comentario com o titulo: "${aviso.titulo}" </h4>
+                        <h3 class="comentarioP">Você tem um comentario em alerta !!!</h3>
+                        <h4 class="comentarioP">Verifique o seu comentario com o titulo: "${aviso.titulo}". </h4>
                     </div>
                 </div>
                         `
