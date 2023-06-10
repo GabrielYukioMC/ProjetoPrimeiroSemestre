@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+:root {
+    --background404Chopper: #ffc2fb;
+    --backgroundcentralChopper: #f9b6ce;
+    --sombra1Chopper: #dba5b9;
+    --sombra2Chopper: #fbcdea;
+    --colorChopper: #fc4dbb;
+
+    --background404Zoro: #d4ffc2;
+    --backgroundcentralZoro: #bbf2ba;
+    --sombra1Zoro: #9bc99a;
+    --sombra2Zoro: #dbffda;
+    --colorZoro: #37e640;
+
+    --background404Tesouro: #ffffc2;
+    --backgroundcentralTesouro: #f2ebba;
+    --sombra1Tesouro: #c9c39a;
+    --sombra2Tesouro: #ffffda;
+    --colorTesouro: #edc432;
+}
+
+body {
+    overflow: hidden;
+}
+
+.caixaPrincipal404 {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+
+
+.caixaCentral {
+    position: relative;
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 75vh;
+    border-radius: 29px;
+    border-radius: 29px;
+
+}
+
+
+
+.caixaCentral .caixa404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+}
+
+.caixaCentral .caixa404 .posicoes {
+    font-size: 170px;
+    font-weight: 700;
+    padding: 1%;
+
+}
+
+.posicao1 {
+    animation: primeiraPosicao 8s infinite;
+}
+
+.posicao2 {
+    animation: segundaPosicao 8s infinite;
+}
+
+.posicao3 {
+    animation: terceiraPosicao 8s infinite;
+}
+
+@keyframes primeiraPosicao {
+    0% {
+        transform: translateY(-20px);
+    }
+
+    25% {
+        transform: translateY(20px);
+
+    }
+
+    50% {
+        transform: translateY(-20px);
+
+    }
+
+    75% {
+        transform: translateY(20px);
+
+    }
+
+    100% {
+        transform: translateY(-20px);
+
+    }
+
+
+}
+
+@keyframes segundaPosicao {
+    0% {
+        transform: translateY(-40px);
+    }
+
+    25% {
+        transform: translateY(40px);
+
+    }
+
+    50% {
+        transform: translateY(-40px);
+
+    }
+
+    75% {
+        transform: translateY(40px);
+
+    }
+
+    100% {
+        transform: translateY(-40px);
+
+    }
+
+
+}
+
+@keyframes terceiraPosicao {
+    0% {
+        transform: translateY(-50px);
+    }
+
+    25% {
+        transform: translateY(50px);
+
+    }
+
+    50% {
+        transform: translateY(-50px);
+
+    }
+
+    75% {
+        transform: translateY(50px);
+
+    }
+
+    100% {
+        transform: translateY(-50px);
+
+    }
+
+
+}
+
+.caixaCentral .caixaTexto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 40%;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+
+.caixaBotao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+}
+
+.caixaBotao a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+  
+ 
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+/* & modelo chopper */
+
+.modeloPrincipalChopper {
+    background: var(--background404Chopper);
+
+}
+
+.modeloCentralChopper {
+    background: var(--backgroundcentralChopper);
+    box-shadow: 34px 34px 40px var(--sombra1Chopper),
+        -34px -34px 40px var(--sombra2Chopper);
+}
+
+.modeloCentralChopper::before {
+    content: url(../img/404/chopper1.png);
+    position: absolute;
+    width: 100px;
+    top: 10px;
+    filter: drop-shadow(0px 0px 20px var(--colorChopper));
+    right: 150px;
+
+}
+
+.modelo404Chopper {
+    color: var(--colorChopper);
+}
+
+.modeloTextoChopper{
+    color: var(--colorChopper);
+
+}
+
+
+.modeloBotaoChopper a{
+    border: 3px solid var(--colorChopper);
+    background: var(--sombra2Chopper);
+    color: var(--colorChopper);
+    width: 200px;
+    height: 50px;
+}
+
+/* & modelo chopper */
+
+
+/* * modelo Zoro */
+
+.modeloPrincipalZoro {
+    background: var(--background404Zoro);
+
+}
+
+.modeloCentralZoro {
+    background: var(--backgroundcentralZoro);
+    box-shadow: 34px 34px 40px var(--sombra1Zoro),
+        -34px -34px 40px var(--sombra2Zoro);
+}
+
+.modeloCentralZoro::before {
+    content: url(../img/404/Zoro1.png);
+    position: absolute;
+    width: 100px;
+    top: 10px;
+    filter: drop-shadow(0px 0px 20px var(--colorZoro));
+    right: 150px;
+
+}
+
+.modelo404Zoro {
+    color: var(--colorZoro);
+}
+
+.modeloTextoZoro{
+    color: var(--colorZoro);
+
+}
+
+
+.modeloBotaoZoro a{
+    border: 3px solid var(--colorZoro);
+    background: var(--sombra2Zoro);
+    color: var(--colorZoro);
+    width: 200px;
+    height: 50px;
+}
+
+/* * modelo Zoro */
+
+
+
+/* * modelo Tesouro */
+
+.modeloPrincipalTesouro {
+    background: var(--background404Tesouro);
+
+}
+
+.modeloCentralTesouro {
+    background: var(--backgroundcentralTesouro);
+    box-shadow: 34px 34px 40px var(--sombra1Tesouro),
+        -34px -34px 40px var(--sombra2Tesouro);
+}
+
+.modeloCentralTesouro::before {
+    content: url(../img/404/sugar.gif);
+    position: absolute;
+    width: 100px;
+    top: 100px;
+    filter: drop-shadow(0px 0px 20px var(--colorTesouro));
+    right: 50px;
+
+}
+
+.modelo404Tesouro {
+    color: var(--colorTesouro);
+}
+
+.modeloTextoTesouro{
+    color: var(--colorTesouro);
+
+}
+
+
+.modeloBotaoTesouro a{
+    border: 3px solid var(--colorTesouro);
+    background: var(--sombra2Tesouro);
+    color: var(--colorTesouro);
+    width: 200px;
+    height: 50px;
+}
+
+/* * modelo Tesouro */
