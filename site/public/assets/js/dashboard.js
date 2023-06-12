@@ -53,30 +53,30 @@ dashboardBtn.addEventListener('click', () => {
 
 
 
-var notificacoesBtn = document.getElementById("notificacoesBtn")
-notificacoesBtn.addEventListener('click', () => {
-    notificacoes.classList.remove('none')
-    notificacoesBtn.classList.add('active')
+// var notificacoesBtn = document.getElementById("notificacoesBtn")
+// notificacoesBtn.addEventListener('click', () => {
+//     notificacoes.classList.remove('none')
+//     notificacoesBtn.classList.add('active')
 
 
-    dashboard.classList.add('none')
-    analytics.classList.add('none')
-    dashboardBtn.classList.remove('active')
-    analyticsBtn.classList.remove('active')
-})
+//     dashboard.classList.add('none')
+//     analytics.classList.add('none')
+//     dashboardBtn.classList.remove('active')
+//     analyticsBtn.classList.remove('active')
+// })
 
-var analyticsBtn = document.getElementById("analyticsBtn")
-analyticsBtn.addEventListener('click', () => {
-    analytics.classList.remove('none')
-    analyticsBtn.classList.add('active')
+// var analyticsBtn = document.getElementById("analyticsBtn")
+// analyticsBtn.addEventListener('click', () => {
+//     analytics.classList.remove('none')
+//     analyticsBtn.classList.add('active')
 
 
 
-    dashboard.classList.add('none')
-    notificacoes.classList.add('none')
-    dashboardBtn.classList.remove('active')
-    notificacoesBtn.classList.remove('active')
-})
+//     dashboard.classList.add('none')
+//     notificacoes.classList.add('none')
+//     dashboardBtn.classList.remove('active')
+//     notificacoesBtn.classList.remove('active')
+// })
 
 var logout = document.getElementById('logout')
 logout.addEventListener('click', () => {

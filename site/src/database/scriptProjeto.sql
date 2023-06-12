@@ -56,21 +56,6 @@ values
         1000
     );
 
-insert into
-    usuario
-values
-    (
-        null,
-        'mm',
-        'mm@',
-        'mm',
-        'padão',
-        'Ambos',
-        default,
-        'padão',
-        506,
-        1002
-    );
 
 create table comentario (
     idComentario int primary key auto_increment,
@@ -94,7 +79,6 @@ insert  into aviso (fkComentario, dataAviso) values ( 2 ,default);
 
 
 
-/* insert into usuario values (null, 'jose','jj','ska','ccc',default); */
 select
     *
 from
@@ -311,43 +295,7 @@ from
 where
     idUsuario = 2;
 
-/* insert comentario */
-insert into
-    comentario (
-        tituloComentario,
-        conteudo,
-        tipoComentario,
-        fkAutor,
-        dtPublicacao
-    )
-values
-    (
-        'Lili?',
-        'imu-sama pode ser a rainha lili  de alabasta ou outra pessoa do seculo perdido.',
-        'teoria',
-        (
-            select
-                idUsuario
-            from
-                usuario
-            where
-                email = 'gabielyukiomibecoca@gmail.com'
-        ),
-        default
-    )  ,  (
-        'Lili?',
-        'imu-sama pode ser a rainha lili  de alabasta ou outra pessoa do seculo perdido.',
-        'teoria',
-        (
-            select
-                idUsuario
-            from
-                usuario
-            where
-                email = 'gabielyukiomibecoca@gmail.com'
-        ),
-        default
-    );
+
 
 select
     comentario.idComentario,
@@ -449,3 +397,17 @@ select tituloComentario from aviso join comentario on fkComentario = idComentari
 
 
 
+
+
+select  
+        (select count(meioVisualizacao) from usuario where meioVisualizacao = 'anime') as anime , 
+        (select count(meioVisualizacao) from usuario where meioVisualizacao = 'manga') as manga,
+        (select count(meioVisualizacao) from usuario where meioVisualizacao = 'ambos')as ambos,
+        (select count(meioVisualizacao) from usuario)as total;
+
+        
+
+
+/* gabrielyukiomibecoca@gmail.com */
+
+/* senha123 */
